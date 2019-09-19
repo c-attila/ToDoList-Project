@@ -1,4 +1,4 @@
------Követelményspecifikáció-----
+-----Funkcionális specifikáció-----
 
 
 1. Bevezetés
