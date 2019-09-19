@@ -11,8 +11,8 @@ elég nehéz fejben tartani kinek milyen feladatot osztottam ki. És van hogy
 ezek a feladatok a nap folyamán megváltoznak és külön kell felkeressem az 
 alkalmazottat ez ügyben. Éppen ezért szükségünk lenne egy olyan rendszerre, 
 amely megkönnyíti ezen teendők menedzselését. Egy to-do listát kezelő programra
-lenne szüksége, hogy jobban és hatékonyabban tudja végezni és kezelni a 
-tennivalóikat. Ez egy olyan eszköz kell legyen, ami nagyban növeli a produktivitásunkat
+lenne szükségünk, hogy jobban és hatékonyabban tudjuk végezni és kezelni a 
+tennivalóinkat. Ez egy olyan eszköz kell legyen, ami nagyban növeli a produktivitásunkat
 és a munkavégzésünk hatásfokát.
 
 2. Jelenlegi helyzet
@@ -36,12 +36,12 @@ melyek napközben módosíthatók. Fontos lenne, hogy legyen mobilos hozzáfér�
 a rendszerhez.
 
 4. Jelenlegi üzleti folyamatok
-A program még nem létezik, ezért a teendőiket fejben, illetve papíron tartják 
+A program még nem létezik, ezért a teendőinket fejben, illetve papíron tartjuk 
 számon, ami nem praktikus és egy kényelmetlen megoldás is. A jelenlegi folyamatban
-a megbeszélés előtt, illetve alatta a csapat vezetője egy papírra leírja valamilyen
-sorrendben (fontosság szerint vagy véletlenszerűen, ahogy eszébe jut), hogy mik a
-teendőik és, ha az egyiket elvégezték, akkor azt kihúzza vagy kipipálja. Újat
-beszúrni nincs lehetőség, legfeljebb a lista végéra. Módosítani ugyancsak nehézkes.
+a megbeszélés előtt, illetve alatta egy papírra leírom valamilyen sorrendben 
+(fontosság szerint vagy véletlenszerűen, ahogy eszembe jut), hogy mik a teendőink
+és, ha az egyiket elvégeztük, akkor azt kihúzom vagy kipipálom. Újat beszúrni 
+nincs lehetőség, legfeljebb a lista végére. Módosítani ugyancsak nehézkes.
 
 5. Igényelt üzleti folyamatok
 A megrendelő igénye szerint a folyamatok úgy alakulnának át, hogy az számukra 
