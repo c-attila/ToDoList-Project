@@ -2,19 +2,35 @@
 
 
 1. Bevezetés
+A program, amit jelenlegi fázisában 'To-Do List manager 0.1' néven fejlesztünk, 
+egy 30 fős vállalat számára készül, akiknek nagyon fontos lenne, hogy teendőiket
+hatékonyan és rugalmasan tudják kezelni, illetve nyilvántartani. Mivel eddig sok
+értékes időt veszítettek el azzal, hogy ezeket a teendőiket leírják és észben
+tartsák, egy olyan programot terveztünk meg, aminek a segítségével sokkal
+produktívabbak tudnak lenni és így a munkavégzésük hatékonysága is sokkal nagyobb
+lesz. A funkciók közé tartozik többek között a teendők hozzáadása, ezek adott
+napi megtekintése és különböző sorrendben való kiiratása. A kezelőfelületet
+mellékelt ábrákon mutatjuk be, amik a dokumentumok mellett találhatóak 
+'terv_login.png', 'terv_menü_admin.png' és 'terv_menü_alkalmazott.png' névvel.
 
 2. Jelenlegi helyzet
+Jelenleg a teendők lejegyzése papír alapon történik, mivel program még nem áll
+a megrendelő rendelkezésére. Ez egy átlagos jegyzetfüzet, amibe lehet írni
+az el végezni kivánt teendőket felsorolásszerűen. Ezek módosítása viszont már
+elég nehéz, mivel a papírról nem lehet úgy kitörölni dolgokat, hogy az ép 
+maradjon és a teendők listája pedig rendezett, átlátható. Ezért van szükségük 
+erre a szoftverre.
 
 3. Vágyálomrendszer
 
 4. Jelenlegi üzleti folyamatok
-Jelenleg egy füzetben vannak nyilvántartva a teendők. Minen nap külön oldalon van 
+Jelenleg egy füzetben vannak nyilvántartva a teendők. Minden nap külön oldalon van 
 nyilvántartva. Sokszor nehézkes eligazodni a napok között. A nap teendői fontossági
 sorrendben, vagy ahogy a szerzőnek az eszébe jut vannak leírva. Épp ezért nehéz 
 azt utólag szerkeszteni, illetve újat beszúrni csak a végére lehet, ami nem mindig 
 kézenfekvő megoldás. Nehéz átláthatóan tördelni a bejegyzéseket. Rendezés lehetősége
 nem áll fenn. A teendő törlése áthúzással oldható meg, ami nem a legszebb megoldás.
-Az alkalmazottak ehez a füzethez nem férnek hozzá. Nem azért mert titkos, hanem
+Az alkalmazottak ehhez a füzethez nem férnek hozzá. Nem azért mert titkos, hanem,
 mert csak egy van belőle. Éppen ezért ők saját megoldásokra szorulnak. Valaki a
 telefonjában rögzíti a teendőit, valaki egy cetlire írja le. Rengeteg féreértés
 születik ezáltal. Ami a legrosszabb, a vállalat vezető nem tudja nyomon követni
@@ -33,4 +49,4 @@ látják a programban, az admin látja az összes teendőt, illetve tudja azokat
 megnevezését, a hozzá tartozó alkalmazott nevét, illetve határidőt (óra:perc), 
 amikorra el kell végezni a teendőt. A bejegyzések rendezhetők a teendő neve vagy 
 leírása alapján, a teendő színe alapján, a hozzáadás sorrendje alapján, az alkalmazott 
-neve alapján, vagy az határidő alapján.
+neve alapján, vagy a határidő alapján.
