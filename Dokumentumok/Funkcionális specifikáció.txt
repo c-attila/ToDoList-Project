@@ -21,3 +21,16 @@ születik ezáltal. Ami a legrosszabb, a vállalat vezető nem tudja nyomon köv
 az alkalmazottak haladását.
 
 5. Igényelt üzleti folyamatok
+A program segítségével átlátható módon lehet nyilvántartani a teendőket. A program
+automatikusan az aktuális napot mutatja. A nyilak segítségével lehet navigálni 
+a napok között, valamint a dátumra kattintva más dátum is megadható. A program 
+rendelkezik egy bejelentkezési felülettel, ahol az alkalmazottak felhasználónév 
+segítségével tudnak belépni. Számukra jelszó nem szükséges, mert a feladataik nem 
+titkosak. Az admin felhasználónév és jelszó páros segítségével tud belépni, ugyanis 
+számára bizalmas funkciók is elérhetők. Az alkalmazottak csak a saját teendőiket 
+látják a programban, az admin látja az összes teendőt, illetve tudja azokat módosítani 
+és tud újakat hozzáadni. Egy bejegyzés tartalmazza a teendő színét, leírását vagy 
+megnevezését, a hozzá tartozó alkalmazott nevét, illetve határidőt (óra:perc), 
+amikorra el kell végezni a teendőt. A bejegyzések rendezhetők a teendő neve vagy 
+leírása alapján, a teendő színe alapján, a hozzáadás sorrendje alapján, az alkalmazott 
+neve alapján, vagy az határidő alapján.
