@@ -1,14 +1,11 @@
-﻿-----Funkcionális specifikáció-----
+-----Funkcionális specifikáció-----
 
 
 1. Bevezetés
-A vállalatom munkagépek üzemeltetésével és karbantartásával foglalkozik. 30 embert foglalkoztatok. Ez a 30 ember 10 különböző feladatot lát el és ezen felül is van, hogy 2-3 plusz feladat kerül be a teendők közé. Külön emberek foglalkoznak a gépek kezelésével, külön emberek a karbantartással és van néhány diszpécserünk is. Nekem is rengeteg teendőm van nap mint nap. Szóval elég nehéz fejben tartani kinek milyen feladatot osztottam ki. És van hogy ezek a feladatok a nap folyamán megváltoznak és külön kell felkeressem az alkalmazottat ez ügyben. Éppen ezért szükségünk lenne egy olyan rendszerre, amely megkönnyíti ezen teendők menedzselését.
 
 2. Jelenlegi helyzet
-Jelenleg reggel tartunk egy megbeszélést, ahol megbeszéljük, hogy ki mit fog csinálni. Ez a folyamat kapásból fél órát vesz igénybe. Emellett számomra a megbeszélés előtt külön kell egy órát kell eltöltenem a feladatok kiszervezésével. Valamint azt is ki kell találnom, hogyy melyik munkát osztom ki hamarabb, mivel az a fél óra előny is sokat számít. A reggeli megbeszélés után mindenki elmegy a dolgára. Az alkalmazottaknak könnyű dolguk van, mert csak a saját feladatukat kell fejben tartaniuk. Ellenben nekem, a vezetőnek, minden feladatot fejben kell tartanom. Van, hogy a megbeszélés után jut eszembe valami, ilyenkor ha szerencsém van akkor személyesen meg tudom beszélni az alkalmazottal, de sokszor ezt sms-ben kell megtegyem, és hát az sms nem a legolcsóbb szolgáltatás. A feladatok fejben tartásához van egy nagyon jó jegyzet fűzetem. Vagyis addig volt jó, amíg el nem telt egy hónap. Mára már semmit sem találok meg benne, kész káosz az egész.
 
 3. Vágyálomrendszer
-Egy olyan rendszert szeretnék, amelyben kiszervezhetők az aznapi teendők, melyek napközben módosíthatók. Fontos lenne, hogy legyen mobilos hozzáférés a rendszerhez.
 
 4. Jelenlegi üzleti folyamatok
 
