@@ -18,18 +18,24 @@ Jelenleg a teendők lejegyzése papír alapon történik, mivel program még nem
 a megrendelő rendelkezésére. Ez egy átlagos jegyzetfüzet, amibe lehet írni
 az el végezni kivánt teendőket felsorolásszerűen. Ezek módosítása viszont már
 elég nehéz, mivel a papírról nem lehet úgy kitörölni dolgokat, hogy az ép 
-maradjon és a teendők listája pedig rendezett, átlátható. Ezért van szükségük 
+maradjon és a teendők listája pedig rendezett, átlátható. Szintén nehézséget okoz
+egy meglévő teendő több részre bontása vagy több teendő összevonása. Ezért van szükségük 
 erre a szoftverre.
 
 3. Vágyálomrendszer
 
 4. Jelenlegi üzleti folyamatok
+A munkanap kezdetén a vállalat tagjai megbeszélést tartanak, mely során összegyűjtik
+és elosztják az aznapi teendőket. A vállalatvezető a megbeszélés előtt a korábbi 
+napokban elvégzett teendőket figyelembe véve nagyvonalakban felvázolja, hogy milyen
+feladatokat kellene elvégezni aznap, ezek között prioritást állít fel.
 Jelenleg egy füzetben vannak nyilvántartva a teendők. Minden nap külön oldalon van 
 nyilvántartva. Sokszor nehézkes eligazodni a napok között. A nap teendői fontossági
 sorrendben, vagy ahogy a szerzőnek az eszébe jut vannak leírva. Épp ezért nehéz 
 azt utólag szerkeszteni, illetve újat beszúrni csak a végére lehet, ami nem mindig 
 kézenfekvő megoldás. Nehéz átláthatóan tördelni a bejegyzéseket. Rendezés lehetősége
 nem áll fenn. A teendő törlése áthúzással oldható meg, ami nem a legszebb megoldás.
+Egyes teendők színekkel vannak ellátva, mely a teendő kategorizálására szolgál.
 Az alkalmazottak ehhez a füzethez nem férnek hozzá. Nem azért mert titkos, hanem,
 mert csak egy van belőle. Éppen ezért ők saját megoldásokra szorulnak. Valaki a
 telefonjában rögzíti a teendőit, valaki egy cetlire írja le. Rengeteg féreértés
@@ -37,7 +43,9 @@ születik ezáltal. Ami a legrosszabb, a vállalat vezető nem tudja nyomon köv
 az alkalmazottak haladását.
 
 5. Igényelt üzleti folyamatok
-A program segítségével átlátható módon lehet nyilvántartani a teendőket. A program
+A jelenlegi folyamatok közül a napi teendők papír alapú feljegyzése, azok módosítása,
+rendszerezése, megosztása, napközben történő módosítása problemás, ezt váltaná fel egy
+program, mely segítségével átlátható módon lehet nyilvántartani a teendőket. A program
 automatikusan az aktuális napot mutatja. A nyilak segítségével lehet navigálni 
 a napok között, valamint a dátumra kattintva más dátum is megadható. A program 
 rendelkezik egy bejelentkezési felülettel, ahol az alkalmazottak felhasználónév 
