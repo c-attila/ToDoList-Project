@@ -2,4 +2,41 @@
 
 
 1. Használt eszközök
-A program Java nyelvben lesz megírva. A megjelenítésre JavaFx-et fogunk hasznáni. Adatbázisnak
+Programozási nyelv: Java
+Megjelenítési eszköz: JavaFx
+Adatbázis: MySQL
+
+2.A program részletes működése
+A program két részből áll, a bejelentkezési felület és a menü, ahol a teendők jelennek
+meg.
+
+2.1.bejelentkezési rendszer
+A login képernyőn kezdünk. A terv_login.png-n jól látható, hogy ez tartalmaz középen 
+felül egy szöveget, ami bármi lehet megegyezés alapján, és egy felhasználónevet 
+és jelszót bekérő űrlapot. Bejelentkezéshez szükséges egy felhasználónév és egy 
+jelszó. A jelszó csak az admin módba való belépéshez szükséges. A login redszer 
+úgy működik, mint egy szűrő. Ha Alkalmazott1 jelentkezik be, akkor csak az ő teendői 
+jelennek meg. Ezt úgy oldjuk meg, hogy az összes teendő közül kiszűrjük azokat, 
+amelyek Alkalmazott1-hez tartoznak és csak azokat jelenítjük meg.
+
+2.2.Menü
+A menü nem más, mint a felhasználói felület, ahol a teendők jelennek meg. Középen 
+felül jelenik meg a dátum, illetve két nyíl. A balfelső sarokban a bejelentkezett
+felhasználó neve található. Ez alatt a rendezési szempontot beállító gomb található.
+Majd ezek alatt maga a teendők listája található. Ez legjobban a terv_menü_admin.png
+és terv_menü_alkalmazott.png tervrajzokon látható. Attól függően, hogy adminként,
+vagy alkalmazottként jelentkezik be a felhasználó, az annak megfelelő funkciók válnak
+elérhetővé.
+
+
+2.2.1.A teendők megjelenítése
+
+2.2.2.Rendezés
+
+2.2.3.Új teendő hozzáadása
+
+2.2.4.A napok közötti navigálás
+
+3.Adatbázis kezelése
+
+
