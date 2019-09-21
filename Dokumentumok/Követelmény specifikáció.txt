@@ -46,3 +46,12 @@ nincs lehetőség, legfeljebb a lista végére. Módosítani ugyancsak nehézkes
 5. Igényelt üzleti folyamatok
 A megrendelő igénye szerint a folyamatok úgy alakulnának át, hogy az számukra 
 megkönnyítené a munkát és hasznos időt szabadítana fel.
+A programban nyilvántartott teendőket bárki megtekinthetné, így az alkalmazottak 
+a nap folyamán bármikor megnézhetnék a saját vagy mások reggeli megbeszélésen 
+kiosztott vagy később kiírt teendőit, és nem kellene megkeresniük engem, hogy egy 
+feladat kiírásra került-e már, vagy éppen kié az a feladat. Emellett az alkalmazottak 
+jelezni tudnák, hogy a teendőiket elvégezték, így a reggeli megbeszélés előtt már 
+láthatnám, hogy mely elvégzett feladatokra lehet építeni a nap folyamán. Rögtön 
+láthatnám, ha valamelyik teendő határidőre nem készült el, a megbeszélésen így arra 
+is juthatna idő, hogy átbeszéljük ilyen esetekben, mi is volt a gond vagy nehézség, 
+nem pedig az adminisztratív feladatok vennék el az időnket.
