@@ -32,8 +32,13 @@ kész káosz az egész.
 
 3. Vágyálomrendszer
 Egy olyan rendszert szeretnék, amelyben kiszervezhetők az aznapi teendők, 
-melyek napközben módosíthatók. Fontos lenne, hogy legyen mobilos hozzáférés 
-a rendszerhez.
+melyek napközben módosíthatók. Emellett az alkalmazottak  jelezni tudnák, hogy
+a teendőiket elvégezték, így a reggeli megbeszélés előtt már  láthatnám, hogy
+mely elvégzett feladatokra lehet építeni a nap folyamán. Rögtön láthatnám, ha
+valamelyik teendő határidőre nem készült el, a megbeszélésen így arra is
+juthatna idő, hogy átbeszéljük ilyen esetekben, mi is volt a gond vagy
+nehézség, nem pedig az adminisztratív feladatok vennék el az időnket. Fontos
+lenne, hogy legyenmobilos hozzáférés  a rendszerhez.
 
 4. Jelenlegi üzleti folyamatok
 A program még nem létezik, ezért a teendőinket fejben, illetve papíron tartjuk 
@@ -49,9 +54,4 @@ megkönnyítené a munkát és hasznos időt szabadítana fel.
 A programban nyilvántartott teendőket bárki megtekinthetné, így az alkalmazottak 
 a nap folyamán bármikor megnézhetnék a saját vagy mások reggeli megbeszélésen 
 kiosztott vagy később kiírt teendőit, és nem kellene megkeresniük engem, hogy egy 
-feladat kiírásra került-e már, vagy éppen kié az a feladat. Emellett az alkalmazottak 
-jelezni tudnák, hogy a teendőiket elvégezték, így a reggeli megbeszélés előtt már 
-láthatnám, hogy mely elvégzett feladatokra lehet építeni a nap folyamán. Rögtön 
-láthatnám, ha valamelyik teendő határidőre nem készült el, a megbeszélésen így arra 
-is juthatna idő, hogy átbeszéljük ilyen esetekben, mi is volt a gond vagy nehézség, 
-nem pedig az adminisztratív feladatok vennék el az időnket.
+feladat kiírásra került-e már, vagy éppen kié az a feladat.
