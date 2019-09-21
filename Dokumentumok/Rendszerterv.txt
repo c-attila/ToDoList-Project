@@ -1,12 +1,5 @@
 -----Rendszerterv-----
 
 
-1. Bevezetés
-
-2. Jelenlegi helyzet
-
-3. Vágyálomrendszer
-
-4. Jelenlegi üzleti folyamatok
-
-5. Igényelt üzleti folyamatok
+1. Használt eszközök
+A program Java nyelvben lesz megírva. A megjelenítésre JavaFx-et fogunk hasznáni. Adatbázisnak
