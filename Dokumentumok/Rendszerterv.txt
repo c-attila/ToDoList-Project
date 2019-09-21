@@ -29,8 +29,17 @@ vagy alkalmazottként jelentkezik be a felhasználó, az annak megfelelő funkci
 elérhetővé.
 
 2.2.1.A teendők megjelenítése
+A teendők megjelenítésére egy vertikális konténer fog szolgálni. Egy teendő, az
+egy bejegyzés, ami a 4.Adatszerkezet pontban van kidolgozva. Innentől teendő alatt
+egy olyan bejegyzést értek. A vertikális konténerben horizontális konténerek lesznek.
+Egy ilyen konténer egy teendőért felel. Ebbe a konténerbe kerülnek be a teendő 
+adatai. 
 
 2.2.2.Rendezés
+A rendezés szempontjai: hozzáadási sorrend, leírás/név, határidő, alkalmazott alapján.
+A rendezést streamek segítsével oldjuk meg. Amint átállításra kerül a rendezés szempontja,
+a teendők rendezésre kerülnek, majd a megjelenített teendők frissülnek, hogy az 
+új sorrend legyen látható.
 
 2.2.3.Új teendő hozzáadása
 
@@ -41,7 +50,7 @@ elérhetővé.
 4.Adatszerkezet
 Minden bejegyzés egy külön objektum, ami áll egy leírásból, egy színből, egy határidőből,
 egy sorszámból és egy hozzárendelt alkalmazottból. Ezek a bejegyzések kerülnek 
-majd megjelenítésre.
+majd megjelenítésre. Ezeket az objektumokat valamilyen listában fogjuk tárolni.
 
 
 
