@@ -4,13 +4,13 @@
 1. Használt eszközök
 Programozási nyelv: Java
 Megjelenítési eszköz: JavaFx
-Adatbázis: MySQL
+Adatbázis: MySQL, Java Persistence API
 
-2.A program részletes működése
+2. A program részletes működése
 A program két részből áll, a bejelentkezési felület és a menü, ahol a teendők jelennek
 meg.
 
-2.1.bejelentkezési rendszer
+2.1. Bejelentkezési rendszer
 A login képernyőn kezdünk. A terv_login.png-n jól látható, hogy ez tartalmaz középen 
 felül egy szöveget, ami bármi lehet megegyezés alapján, és egy felhasználónevet 
 és jelszót bekérő űrlapot. Bejelentkezéshez szükséges egy felhasználónév és egy 
@@ -19,7 +19,7 @@ jelszó. A jelszó csak az admin módba való belépéshez szükséges. A login 
 jelennek meg. Ezt úgy oldjuk meg, hogy az összes teendő közül kiszűrjük azokat, 
 amelyek Alkalmazott1-hez tartoznak és csak azokat jelenítjük meg.
 
-2.2.Menü
+2.2. Menü
 A menü nem más, mint a felhasználói felület, ahol a teendők jelennek meg. Középen 
 felül jelenik meg a dátum, illetve két nyíl. A balfelső sarokban a bejelentkezett
 felhasználó neve található. Ez alatt a rendezési szempontot beállító gomb található.
@@ -28,29 +28,47 @@ Majd ezek alatt maga a teendők listája található. Ez legjobban a terv_menü_
 vagy alkalmazottként jelentkezik be a felhasználó, az annak megfelelő funkciók válnak
 elérhetővé.
 
-2.2.1.A teendők megjelenítése
+2.2.1. A teendők megjelenítése
 A teendők megjelenítésére egy vertikális konténer fog szolgálni. Egy teendő, az
 egy bejegyzés, ami a 4.Adatszerkezet pontban van kidolgozva. Innentől teendő alatt
 egy olyan bejegyzést értek. A vertikális konténerben horizontális konténerek lesznek.
 Egy ilyen konténer egy teendőért felel. Ebbe a konténerbe kerülnek be a teendő 
 adatai. 
 
-2.2.2.Rendezés
+2.2.2. Rendezés
 A rendezés szempontjai: hozzáadási sorrend, leírás/név, határidő, alkalmazott alapján.
 A rendezést streamek segítsével oldjuk meg. Amint átállításra kerül a rendezés szempontja,
 a teendők rendezésre kerülnek, majd a megjelenített teendők frissülnek, hogy az 
 új sorrend legyen látható.
 
-2.2.3.Új teendő hozzáadása
+2.2.3. Új teendő hozzáadása
 
-2.2.4.A napok közötti navigálás
+2.2.4. A napok közötti navigálás
 
-3.Adatbázis kezelése
+3. Adatbázis kezelése
+A teendők tárolására egy adatbázist fogunk használni, amihez a remotemysql.com
+szolgáltatását fogjuk igénybe venni. Továbbá, az adatok tárolásához a Java 
+Persistence API-t és a hibernate függőséget használjuk. Ezen az adatbázison
+tároljuk a teendőket és a admin jelszavát is. Az első, bejelentkező képernyőn,
+amikor a felhasználó adatait bekérjük, két féle képen járunk el. Ha az adott 
+felhasználó a 'felhasználónév' mezőbe "admin"-t ad meg, akkor megnézzük, hogy
+a hozzá megadott jelszó megegyezik-e az adatbázisban tárolt jelszóval. Ha igen,
+akkor megjelenítjük neki az összes alkalmazott teendőjét, ha viszont nem, akkor
+nem jelenítünk meg semmilyen adatot és újra be kell jelentkezzen. Amennyiben
+a felhasználó a névhez nem társít jelszót is, akkor az adott névhez tartozó 
+teendőket jelenítjük meg. Ez nem biztonsági rés, hiszen az alkalmazottak 
+teendői nem titkos egymás számásra. Ezt követően a teendőket listázó és annak
+hozzáadását lehetővé tevő képernyő jön be. Ezeket a teendőket egy saját táblán
+tároljuk. Erről a tábláról olvassuk ki egy SQL lekéréssel a megfelelő napra vonatkozó
+adatokat. Ha a felhasználó más sorrendben akarja látni őket és használja a
+'rendezési szempont' funkciót, akkor másik SQL lekérést használunk és 'order by'
+segítségével a kívánt sorrendbe rendezzük a teendőket. A teendők hozzáadásánál
+is hasonlóképen járunk el. Bekérjük az elmenteni kívánt adatokat, teendőket és
+azokat egy SQL 'insert'-tel beszúrjuk a táblába az adott felhasználó nevével
+együtt. Ez a funkció viszont csak az admin számára elérhető, így ő adja meg
+azt is, hogy kinek akarja a teendőt felírni.
 
-4.Adatszerkezet
+4. Adatszerkezet
 Minden bejegyzés egy külön objektum, ami áll egy leírásból, egy színből, egy határidőből,
 egy sorszámból és egy hozzárendelt alkalmazottból. Ezek a bejegyzések kerülnek 
-majd megjelenítésre. Ezeket az objektumokat valamilyen listában fogjuk tárolni.
-
-
-
+majd megjelenítésre. Ezeket az objektumokat az adatbázison fogjuk tárolni táblákban.
