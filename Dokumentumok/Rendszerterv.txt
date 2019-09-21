@@ -28,7 +28,6 @@ Majd ezek alatt maga a teendők listája található. Ez legjobban a terv_menü_
 vagy alkalmazottként jelentkezik be a felhasználó, az annak megfelelő funkciók válnak
 elérhetővé.
 
-
 2.2.1.A teendők megjelenítése
 
 2.2.2.Rendezés
@@ -38,5 +37,11 @@ elérhetővé.
 2.2.4.A napok közötti navigálás
 
 3.Adatbázis kezelése
+
+4.Adatszerkezet
+Minden bejegyzés egy külön objektum, ami áll egy leírásból, egy színből, egy határidőből,
+egy sorszámból és egy hozzárendelt alkalmazottból. Ezek a bejegyzések kerülnek 
+majd megjelenítésre.
+
 
 
