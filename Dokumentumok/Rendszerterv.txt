@@ -8,7 +8,7 @@ Adatbázis: MySQL, Java Persistence API
 
 2. A program részletes működése
 A program két részből áll, a bejelentkezési felület és a menü, ahol a teendők jelennek
-meg.
+meg. A programot a model-view-controller tervezési minta alapján készítjük.
 
 2.1. Bejelentkezési rendszer
 A login képernyőn kezdünk. A terv_login.png-n jól látható, hogy ez tartalmaz középen 
