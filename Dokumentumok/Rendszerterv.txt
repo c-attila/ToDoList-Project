@@ -17,7 +17,15 @@ felül egy szöveget, ami bármi lehet megegyezés alapján, és egy felhasznál
 jelszó. A jelszó csak az admin módba való belépéshez szükséges. A login redszer 
 úgy működik, mint egy szűrő. Ha Alkalmazott1 jelentkezik be, akkor csak az ő teendői 
 jelennek meg. Ezt úgy oldjuk meg, hogy az összes teendő közül kiszűrjük azokat, 
-amelyek Alkalmazott1-hez tartoznak és csak azokat jelenítjük meg.
+amelyek Alkalmazott1-hez tartoznak és csak azokat jelenítjük meg. Ha admin jelentkezik
+be, akkor az adatbázisból lekérjük az adminhoz tartozó jelszót, majd összehasonlítjuk
+a jelszó mezőbe beírt jelszóval. Ha nem egyeznek meg, akkor hibaüzenet kerül kiírásra
+és újból be kell jelentkezni. Ha megfelelő jelszó került beírásra, akkor sikeres
+a bejelentkezés és megjeleník az admin felület. Ha véletlenül, egy olyan alkalmazott
+jelentkezik be, akinek a nevéhez nincs teendő az adatbázisban, akkor nem törtönik
+hiba, egyszerűen csak nem fog egy teendőt sem látni. Éppen ezért nem szükséges az
+alkalmazottak felhasználónevének az érvényesítése. Mert igazából "asdasd" is beléphet,
+max nem fog látni teendőt.
 
 2.2. Menü
 A menü nem más, mint a felhasználói felület, ahol a teendők jelennek meg. Középen 
@@ -37,13 +45,34 @@ adatai.
 
 2.2.2. Rendezés
 A rendezés szempontjai: hozzáadási sorrend, leírás/név, határidő, alkalmazott alapján.
-A rendezést streamek segítsével oldjuk meg. Amint átállításra kerül a rendezés szempontja,
-a teendők rendezésre kerülnek, majd a megjelenített teendők frissülnek, hogy az 
-új sorrend legyen látható.
+A rendezés az adatbázisból való lekérdezéskor történik meg. Amint új rendezési szempont
+került beállításra, a bejegyzések újból kiírásra kerülnek, hogy már az új rendezés
+legyen látható. A rendezés funkció elérhető mind az alkalmazottak, mind az admin
+számára.
 
 2.2.3. Új teendő hozzáadása
+Új teendőt hozzáadni csak az admin tud, ezért ez a funkció az alkalmazottak számára
+nem is látható. A "Teendő hozzáadása..." mezőbe kattintva lehet beírni az új teendőt,
+majd enter megnyomásakor az oda beírt szöveg bekerül az adatbázisba. Majd az adatbázisból
+újból lekérdezésre kerülnek a teendők, az aktuális rendezés alapján, majd megjelenítésre
+kerülnek a teendők. A megjelenített teendőkhöz rendelhető szín, amit a teendő leírása/
+neve előtt található négyzettel lehet megtenni, valamint határidő, illetve alkalmazott.
+Ezek az adatok mind tárolásra kerülnek az adatbásiban a megfelelő teendőhöz tartozó
+táblában. 
 
 2.2.4. A napok közötti navigálás
+A napok közötti navigálás elérhető mind az alkalmazottak, mind az admin számára.
+Ez a dátum előtt, illetve után található nyilak segítségével tehető meg. Valamint 
+lehetőség van a dátumra kattintva egyedileg beírni egy dátumot. Amint új dátum kerül
+megadára, az adatbázisból lekérésre kerülnek, az éppen aktuális rendezési beállításokkal,
+illetve szűrési beállításokkal, a megfelelő naphoz tartozó teendők, majd megjelenítésre
+kerülnek.
+
+2.2.5. Az admin felület és az alkalmazott felület különbségei
+Az admin számára jóval több funkció áll rendelkezére. Míg az alkalmazott csak megnézni
+tudja a teendőket, addig az admin tudja szerkeszteni azokat és újakat is hozzá tud 
+adni. Míg az alkalmazottnak csak a saját nevére szóló teendői jelennek meg, addig
+az admin az összes alkalmazott teendőjét látja.
 
 3. Adatbázis kezelése
 A teendők tárolására egy adatbázist fogunk használni, amihez a remotemysql.com
