@@ -23,6 +23,15 @@ egy meglévő teendő több részre bontása vagy több teendő összevonása. E
 erre a szoftverre.
 
 3. Vágyálomrendszer
+A rendszer a felvett teendők átlátásában, rendezésében, rendszerezésében, 
+nyilvántartásában segítene. Az alkalmazottak bármikor megnézhetnék, milyen feladataik
+vannak, és ha egyet elvégeztek, azt jelezhetnék a rendszerben, az elvégzett teendők
+zölden jelennének meg, míg a határidőre nem teljesítettek pirosan. Így mindenki rögtön
+láthatná, hogyan áll a napi feladataival. A teendőkhöz címkéket lehetne rendelni, egyhez 
+többet is, így azokat tetszőlegesen lehetne kategorizálni. A címkékre lehetne szűrni,
+így egy adott kategóriába tartozó feladatokat együtt lehetne látni, ez pedig nagyban
+megkönnyítené a munkafolyamatok szervezését és átláthatóságát, például a párhuzamosan
+futó projektjeink esetén.
 
 4. Jelenlegi üzleti folyamatok
 A munkanap kezdetén a vállalat tagjai megbeszélést tartanak, mely során összegyűjtik
