@@ -16,11 +16,11 @@ mellékelt ábrákon mutatjuk be, amik a dokumentumok mellett találhatóak
 2. Jelenlegi helyzet
 Jelenleg a teendők lejegyzése papír alapon történik, mivel program még nem áll
 a megrendelő rendelkezésére. Ez egy átlagos jegyzetfüzet, amibe lehet írni
-az el végezni kívánt teendőket felsorolásszerűen. Ezek módosítása viszont már
+az elvégezni kívánt teendőket felsorolásszerűen. Ezek módosítása viszont már
 elég nehéz, mivel a papírról nem lehet úgy kitörölni dolgokat, hogy az ép 
 maradjon és a teendők listája pedig rendezett, átlátható. Szintén nehézséget okoz
-egy meglévő teendő több részre bontása vagy több teendő összevonása. Ezért van szükségük 
-erre a szoftverre.
+egy meglévő teendő több részre bontása vagy több teendő összevonása.  Nagyon kis idő után kavalkád alakul ki a teendők ilyen formában történő kezelése esetén. Ezért van szükségük 
+erre a szoftverre. 
 
 3. Vágyálomrendszer
 A rendszer a felvett teendők átlátásában, rendezésében, rendszerezésében, 
@@ -31,7 +31,9 @@ láthatná, hogyan áll a napi feladataival. A teendőkhöz címkéket lehetne r
 többet is, így azokat tetszőlegesen lehetne kategorizálni. A címkékre lehetne szűrni,
 így egy adott kategóriába tartozó feladatokat együtt lehetne látni, ez pedig nagyban
 megkönnyítené a munkafolyamatok szervezését és átláthatóságát, például a párhuzamosan
-futó projektjeink esetén.
+futó projektjeink esetén. Továbbá fontos, hogy egy-egy teendőnél az idő is szerepeljen, hogy mikor lett kiírva. Az egész lényege az lenne, hogy egy könnyen kezelhető és 
+átlátható program legyen az egész, amely fokozottan megkönnyíti a napi teendőkkel 
+kapcsolatos gondjainkat. 
 
 4. Jelenlegi üzleti folyamatok
 A munkanap kezdetén a vállalat tagjai megbeszélést tartanak, mely során összegyűjtik

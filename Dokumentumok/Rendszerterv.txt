@@ -34,7 +34,7 @@ felhasználó neve található. Ez alatt a rendezési szempontot beállító gom
 Majd ezek alatt maga a teendők listája található. Ez legjobban a terv_menü_admin.png
 és terv_menü_alkalmazott.png tervrajzokon látható. Attól függően, hogy adminként,
 vagy alkalmazottként jelentkezik be a felhasználó, az annak megfelelő funkciók válnak
-elérhetővé.
+elérhetővé. Admin esetében a Teendő hozzáadása is megjelenik, funkciója magától erthető. 
 
 2.2.1. A teendők megjelenítése
 A teendők megjelenítésére egy vertikális konténer fog szolgálni. Egy teendő, az
@@ -58,7 +58,7 @@ majd enter megnyomásakor az oda beírt szöveg bekerül az adatbázisba. Majd a
 kerülnek a teendők. A megjelenített teendőkhöz rendelhető szín, amit a teendő leírása/
 neve előtt található négyzettel lehet megtenni, valamint határidő, illetve alkalmazott.
 Ezek az adatok mind tárolásra kerülnek az adatbázisban a megfelelő teendőhöz tartozó
-táblában. 
+táblában. Csak abban az esetben lehet sikeres a teendő hozzáadása, amennyiben minden kötelező mezőt kitöltünk. 
 
 2.2.4. A napok közötti navigálás
 A napok közötti navigálás elérhető mind az alkalmazottak, mind az admin számára.
