@@ -14,22 +14,22 @@ meg. A programot a model-view-controller tervezési minta alapján készítjük.
 A login képernyőn kezdünk. A terv_login.png-n jól látható, hogy ez tartalmaz középen 
 felül egy szöveget, ami bármi lehet megegyezés alapján, és egy felhasználónevet 
 és jelszót bekérő űrlapot. Bejelentkezéshez szükséges egy felhasználónév és egy 
-jelszó. A jelszó csak az admin módba való belépéshez szükséges. A login redszer 
+jelszó. A jelszó csak az admin módba való belépéshez szükséges. A login rendszer 
 úgy működik, mint egy szűrő. Ha Alkalmazott1 jelentkezik be, akkor csak az ő teendői 
 jelennek meg. Ezt úgy oldjuk meg, hogy az összes teendő közül kiszűrjük azokat, 
 amelyek Alkalmazott1-hez tartoznak és csak azokat jelenítjük meg. Ha admin jelentkezik
 be, akkor az adatbázisból lekérjük az adminhoz tartozó jelszót, majd összehasonlítjuk
 a jelszó mezőbe beírt jelszóval. Ha nem egyeznek meg, akkor hibaüzenet kerül kiírásra
 és újból be kell jelentkezni. Ha megfelelő jelszó került beírásra, akkor sikeres
-a bejelentkezés és megjeleník az admin felület. Ha véletlenül, egy olyan alkalmazott
-jelentkezik be, akinek a nevéhez nincs teendő az adatbázisban, akkor nem törtönik
+a bejelentkezés és megjelenik az admin felület. Ha véletlenül, egy olyan alkalmazott
+jelentkezik be, akinek a nevéhez nincs teendő az adatbázisban, akkor nem történik
 hiba, egyszerűen csak nem fog egy teendőt sem látni. Éppen ezért nem szükséges az
 alkalmazottak felhasználónevének az érvényesítése. Mert igazából "asdasd" is beléphet,
 max nem fog látni teendőt.
 
 2.2. Menü
 A menü nem más, mint a felhasználói felület, ahol a teendők jelennek meg. Középen 
-felül jelenik meg a dátum, illetve két nyíl. A balfelső sarokban a bejelentkezett
+felül jelenik meg a dátum, illetve két nyíl. A bal felső sarokban a bejelentkezett
 felhasználó neve található. Ez alatt a rendezési szempontot beállító gomb található.
 Majd ezek alatt maga a teendők listája található. Ez legjobban a terv_menü_admin.png
 és terv_menü_alkalmazott.png tervrajzokon látható. Attól függően, hogy adminként,
@@ -57,19 +57,19 @@ majd enter megnyomásakor az oda beírt szöveg bekerül az adatbázisba. Majd a
 újból lekérdezésre kerülnek a teendők, az aktuális rendezés alapján, majd megjelenítésre
 kerülnek a teendők. A megjelenített teendőkhöz rendelhető szín, amit a teendő leírása/
 neve előtt található négyzettel lehet megtenni, valamint határidő, illetve alkalmazott.
-Ezek az adatok mind tárolásra kerülnek az adatbásiban a megfelelő teendőhöz tartozó
+Ezek az adatok mind tárolásra kerülnek az adatbázisban a megfelelő teendőhöz tartozó
 táblában. 
 
 2.2.4. A napok közötti navigálás
 A napok közötti navigálás elérhető mind az alkalmazottak, mind az admin számára.
 Ez a dátum előtt, illetve után található nyilak segítségével tehető meg. Valamint 
 lehetőség van a dátumra kattintva egyedileg beírni egy dátumot. Amint új dátum kerül
-megadára, az adatbázisból lekérésre kerülnek, az éppen aktuális rendezési beállításokkal,
+megadásra, az adatbázisból lekérésre kerülnek, az éppen aktuális rendezési beállításokkal,
 illetve szűrési beállításokkal, a megfelelő naphoz tartozó teendők, majd megjelenítésre
 kerülnek.
 
 2.2.5. Az admin felület és az alkalmazott felület különbségei
-Az admin számára jóval több funkció áll rendelkezére. Míg az alkalmazott csak megnézni
+Az admin számára jóval több funkció áll rendelkezésre. Míg az alkalmazott csak megnézni
 tudja a teendőket, addig az admin tudja szerkeszteni azokat és újakat is hozzá tud 
 adni. Míg az alkalmazottnak csak a saját nevére szóló teendői jelennek meg, addig
 az admin az összes alkalmazott teendőjét látja.
@@ -79,14 +79,14 @@ A teendők tárolására egy adatbázist fogunk használni, amihez a remotemysql
 szolgáltatását fogjuk igénybe venni. Továbbá, az adatok tárolásához a Java 
 Persistence API-t és a hibernate függőséget használjuk. Ezen az adatbázison
 tároljuk a teendőket és a admin jelszavát is. Az első, bejelentkező képernyőn,
-amikor a felhasználó adatait bekérjük, két féle képen járunk el. Ha az adott 
+amikor a felhasználó adatait bekérjük, kétféleképpen járunk el. Ha az adott 
 felhasználó a 'felhasználónév' mezőbe "admin"-t ad meg, akkor megnézzük, hogy
 a hozzá megadott jelszó megegyezik-e az adatbázisban tárolt jelszóval. Ha igen,
 akkor megjelenítjük neki az összes alkalmazott teendőjét, ha viszont nem, akkor
 nem jelenítünk meg semmilyen adatot és újra be kell jelentkezzen. Amennyiben
 a felhasználó a névhez nem társít jelszót is, akkor az adott névhez tartozó 
 teendőket jelenítjük meg. Ez nem biztonsági rés, hiszen az alkalmazottak 
-teendői nem titkos egymás számásra. Ezt követően a teendőket listázó és annak
+teendői nem titkos egymás számára. Ezt követően a teendőket listázó és annak
 hozzáadását lehetővé tevő képernyő jön be. Ezeket a teendőket egy saját táblán
 tároljuk. Erről a tábláról olvassuk ki egy SQL lekéréssel a megfelelő napra vonatkozó
 adatokat. Ha a felhasználó más sorrendben akarja látni őket és használja a

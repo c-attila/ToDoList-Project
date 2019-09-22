@@ -38,7 +38,7 @@ mely elvégzett feladatokra lehet építeni a nap folyamán. Rögtön láthatná
 valamelyik teendő határidőre nem készült el, a megbeszélésen így arra is
 juthatna idő, hogy átbeszéljük ilyen esetekben, mi is volt a gond vagy
 nehézség, nem pedig az adminisztratív feladatok vennék el az időnket. Fontos
-lenne, hogy legyenmobilos hozzáférés  a rendszerhez.
+lenne, hogy legyen mobilos hozzáférés  a rendszerhez.
 
 4. Jelenlegi üzleti folyamatok
 A program még nem létezik, ezért a teendőinket fejben, illetve papíron tartjuk 

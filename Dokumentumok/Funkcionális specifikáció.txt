@@ -9,14 +9,14 @@ hatékonyan és rugalmasan tudják kezelni, illetve nyilvántartani. Mivel eddig
 tartsák, egy olyan programot terveztünk meg, aminek a segítségével sokkal
 produktívabbak tudnak lenni és így a munkavégzésük hatékonysága is sokkal nagyobb
 lesz. A funkciók közé tartozik többek között a teendők hozzáadása, ezek adott
-napi megtekintése és különböző sorrendben való kiiratása. A kezelőfelületet
+napi megtekintése és különböző sorrendben való kiíratása. A kezelőfelületet
 mellékelt ábrákon mutatjuk be, amik a dokumentumok mellett találhatóak 
 'terv_login.png', 'terv_menü_admin.png' és 'terv_menü_alkalmazott.png' névvel.
 
 2. Jelenlegi helyzet
 Jelenleg a teendők lejegyzése papír alapon történik, mivel program még nem áll
 a megrendelő rendelkezésére. Ez egy átlagos jegyzetfüzet, amibe lehet írni
-az el végezni kivánt teendőket felsorolásszerűen. Ezek módosítása viszont már
+az el végezni kívánt teendőket felsorolásszerűen. Ezek módosítása viszont már
 elég nehéz, mivel a papírról nem lehet úgy kitörölni dolgokat, hogy az ép 
 maradjon és a teendők listája pedig rendezett, átlátható. Szintén nehézséget okoz
 egy meglévő teendő több részre bontása vagy több teendő összevonása. Ezért van szükségük 
@@ -36,7 +36,7 @@ futó projektjeink esetén.
 4. Jelenlegi üzleti folyamatok
 A munkanap kezdetén a vállalat tagjai megbeszélést tartanak, mely során összegyűjtik
 és elosztják az aznapi teendőket. A vállalatvezető a megbeszélés előtt a korábbi 
-napokban elvégzett teendőket figyelembe véve nagyvonalakban felvázolja, hogy milyen
+napokban elvégzett teendőket figyelembe véve nagy vonalakban felvázolja, hogy milyen
 feladatokat kellene elvégezni aznap, ezek között prioritást állít fel.
 Jelenleg egy füzetben vannak nyilvántartva a teendők. Minden nap külön oldalon van 
 nyilvántartva. Sokszor nehézkes eligazodni a napok között. A nap teendői fontossági
@@ -47,13 +47,13 @@ nem áll fenn. A teendő törlése áthúzással oldható meg, ami nem a legszeb
 Egyes teendők színekkel vannak ellátva, mely a teendő kategorizálására szolgál.
 Az alkalmazottak ehhez a füzethez nem férnek hozzá. Nem azért mert titkos, hanem,
 mert csak egy van belőle. Éppen ezért ők saját megoldásokra szorulnak. Valaki a
-telefonjában rögzíti a teendőit, valaki egy cetlire írja le. Rengeteg féreértés
+telefonjában rögzíti a teendőit, valaki egy cetlire írja le. Rengeteg félreértés
 születik ezáltal. Ami a legrosszabb, a vállalat vezető nem tudja nyomon követni
 az alkalmazottak haladását.
 
 5. Igényelt üzleti folyamatok
 A jelenlegi folyamatok közül a napi teendők papír alapú feljegyzése, azok módosítása,
-rendszerezése, megosztása, napközben történő módosítása problemás, ezt váltaná fel egy
+rendszerezése, megosztása, napközben történő módosítása problémás, ezt váltaná fel egy
 program, mely segítségével átlátható módon lehet nyilvántartani a teendőket. A program
 automatikusan az aktuális napot mutatja. A nyilak segítségével lehet navigálni 
 a napok között, valamint a dátumra kattintva más dátum is megadható. A program 
