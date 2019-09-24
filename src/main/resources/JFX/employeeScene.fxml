@@ -24,6 +24,14 @@
             <MenuItem fx:id="sort_by_employee_menuItem" mnemonicParsing="false" text="Alkalmazott" />
         </items>
       </MenuButton>
-      <VBox fx:id="list_vbox" layoutY="80.0" prefHeight="520.0" prefWidth="1000.0" />
+      <ScrollPane layoutY="114.0" prefHeight="485.0" prefWidth="1000.0" style="-fx-background-color: #99d8ea;">
+         <content>
+            <AnchorPane prefHeight="500.0" prefWidth="990.0" style="-fx-background-color: #99d8ea;">
+               <children>
+                  <VBox id="list_VBox" fx:id="list_VBox" prefWidth="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
    </children>
 </Pane>
