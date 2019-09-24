@@ -36,9 +36,9 @@
                   <Font size="26.0" />
                </font>
             </Text>
-            <TextField layoutX="648.0" layoutY="241.0" prefHeight="25.0" prefWidth="179.0" />
-            <TextField layoutX="648.0" layoutY="292.0" prefHeight="25.0" prefWidth="179.0" />
-            <Button layoutX="589.0" layoutY="473.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="119.0" text="Bejelentkezés" />
+            <TextField id="user_name_text_field" fx:id="user_name_text_field" layoutX="648.0" layoutY="241.0" prefHeight="25.0" prefWidth="179.0" />
+            <TextField id="password_text_field" fx:id="password_text_field" layoutX="648.0" layoutY="292.0" prefHeight="25.0" prefWidth="179.0" />
+            <Button id="login_button" fx:id="login_button" layoutX="589.0" layoutY="473.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="119.0" text="Bejelentkezés" />
          </children></Pane>
    </children>
 </GridPane>
