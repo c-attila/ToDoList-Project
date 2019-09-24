@@ -9,36 +9,37 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contoller.Controller">
-   <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
+<Pane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #99d8ea;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #99d8ea;">
+      <Text layoutX="231.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XYZ kft. Tevékenységi naplója" wrappingWidth="523.13671875">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Text>
+      <VBox layoutX="318.0" layoutY="245.0" spacing="10.0">
          <children>
-            <Text layoutX="387.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XYZ kft. Tevékenységi naplója" wrappingWidth="523.13671875">
-               <font>
-                  <Font size="38.0" />
-               </font>
-            </Text>
-            <Text layoutX="453.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Felhasználónév:">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Text>
-            <Text layoutX="560.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó:">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Text>
-            <TextField id="user_name_text_field" fx:id="user_name_text_field" layoutX="648.0" layoutY="241.0" prefHeight="25.0" prefWidth="179.0" />
-            <TextField id="password_text_field" fx:id="password_text_field" layoutX="648.0" layoutY="292.0" prefHeight="25.0" prefWidth="179.0" />
-            <Button id="login_button" fx:id="login_button" layoutX="589.0" layoutY="473.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="119.0" text="Bejelentkezés" />
-         </children></Pane>
+            <HBox layoutX="453.0" layoutY="233.943359375" spacing="5.0">
+               <children>
+                  <Text layoutX="453.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Felhasználónév:">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <TextField id="user_name_text_field" fx:id="user_name_text_field" layoutX="648.0" layoutY="241.0" prefHeight="35.0" prefWidth="179.0" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" layoutX="560.0" layoutY="284.943359375" spacing="5.0">
+               <children>
+                  <Text layoutX="560.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó:">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <TextField id="password_text_field" fx:id="password_text_field" layoutX="648.0" layoutY="292.0" prefHeight="35.0" prefWidth="179.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button id="login_button" fx:id="login_button" layoutX="433.0" layoutY="415.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="119.0" text="Bejelentkezés" />
    </children>
-</GridPane>
+</Pane>
