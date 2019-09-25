@@ -26,8 +26,7 @@ public class Todo {
     @Column(name = "isDone")
     private boolean isDone;
 
-    public Todo(int id, char color, String description, Timestamp deadline, String employee, boolean isDone) {
-        this.id = id;
+    public Todo(char color, String description, Timestamp deadline, String employee, boolean isDone) {
         this.color = color;
         this.description = description;
         this.deadline = deadline;
