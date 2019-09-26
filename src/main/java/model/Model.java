@@ -23,8 +23,6 @@ public class Model {
         Todo todo = new Todo(new java.sql.Timestamp(today.getTime()), 'r', "asd", new java.sql.Timestamp(today.getTime()), "Aladár", false);
         dao.saveTodo(todo);
 
-        controller.showTodos("id","Aladár",new java.sql.Timestamp(today.getTime()));
-
     }
 
 }

@@ -11,7 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/JFX/loginScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/JFX/employeeScene.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setWidth(1000);
         primaryStage.setHeight(600);
@@ -19,6 +19,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         primaryStage.setOnCloseRequest(e -> TodoDAO.close());
+
     }
 
 
