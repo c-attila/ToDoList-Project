@@ -29,9 +29,7 @@ public class Controller implements Initializable {
     }
 
 
-    public void showTodos(String attribute, String user, java.sql.Timestamp date){
-
-        List<Todo> listTodo = todoDAO.listTodo(attribute, user, date);
+    public void showTodos(List<Todo> listTodo){
 
         for(Todo todo : listTodo) {
 
