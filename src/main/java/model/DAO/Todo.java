@@ -11,6 +11,9 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "addingDate")
+    private java.sql.Timestamp addingDate;
+
     @Column(name = "color")
     private char color;
 
@@ -26,7 +29,8 @@ public class Todo {
     @Column(name = "isDone")
     private boolean isDone;
 
-    public Todo(char color, String description, Timestamp deadline, String employee, boolean isDone) {
+    public Todo(Timestamp addingDate, char color, String description, Timestamp deadline, String employee, boolean isDone) {
+        this.addingDate = addingDate;
         this.color = color;
         this.description = description;
         this.deadline = deadline;
@@ -41,6 +45,10 @@ public class Todo {
     public void setId(int id) {
         this.id = id;
     }
+
+    public Timestamp getAddingDate() { return addingDate; }
+
+    public void setAddingDate(Timestamp addingDate) { this.addingDate = addingDate; }
 
     public char getColor() {
         return color;
@@ -86,6 +94,7 @@ public class Todo {
     public String toString() {
         return "Todo{" +
                 "id=" + id +
+                ", addingDate=" + addingDate +
                 ", color=" + color +
                 ", description='" + description + '\'' +
                 ", deadline=" + deadline +

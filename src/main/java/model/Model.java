@@ -20,7 +20,7 @@ public class Model {
     public void adatbazisProba() {
 
         java.util.Date today = new java.util.Date();
-        Todo todo = new Todo('r', "asd", new java.sql.Timestamp(today.getTime()), "Aladár", false);
+        Todo todo = new Todo(new java.sql.Timestamp(today.getTime()), 'r', "asd", new java.sql.Timestamp(today.getTime()), "Aladár", false);
         dao.saveTodo(todo);
 
         controller.showTodos("id","Aladár",new java.sql.Timestamp(today.getTime()));
