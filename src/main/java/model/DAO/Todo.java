@@ -82,4 +82,15 @@ public class Todo {
         isDone = done;
     }
 
+    @Override
+    public String toString() {
+        return "Todo{" +
+                "id=" + id +
+                ", color=" + color +
+                ", description='" + description + '\'' +
+                ", deadline=" + deadline +
+                ", employee='" + employee + '\'' +
+                ", isDone=" + isDone +
+                '}';
+    }
 }

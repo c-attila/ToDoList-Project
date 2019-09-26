@@ -1,5 +1,6 @@
 package model;
 
+import controller.Controller;
 import model.DAO.Todo;
 import model.DAO.TodoDAO;
 import org.apache.logging.log4j.LogManager;
@@ -10,6 +11,7 @@ public class Model {
     private static Logger logger = LogManager.getLogger();
 
     private TodoDAO dao;
+    private Controller controller;
 
     public Model() {
         dao = new TodoDAO();
@@ -20,6 +22,9 @@ public class Model {
         java.util.Date today = new java.util.Date();
         Todo todo = new Todo('r', "asd", new java.sql.Timestamp(today.getTime()), "Aladár", false);
         dao.saveTodo(todo);
+
+        controller.showTodos("id","Aladár",new java.sql.Timestamp(today.getTime()));
+
     }
 
 }
