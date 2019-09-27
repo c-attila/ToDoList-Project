@@ -41,17 +41,17 @@ public class TodoDAO {
         }
     }
 
-    public List<Todo> listTodo(String attribute, String user, java.sql.Timestamp date) {
+    public List<Todo> listTodo(String attribute, String user, java.sql.Timestamp addingDate) {
 
         TypedQuery<Todo> query;
         try {
             if (user.equals("admin"))
                 query = em.createQuery("SELECT td FROM Todo td " +
-                        "WHERE EXTRACT(DAY FROM td.deadline) = EXTRACT(DAY FROM " + date + ")" +
+                        "WHERE EXTRACT(DAY FROM td.addingDate) = EXTRACT(DAY FROM " + addingDate + ")" +
                         " ORDER BY td.'" + attribute + "'", Todo.class);
             else
                 query = em.createQuery("SELECT td FROM Todo td " +
-                        "WHERE EXTRACT(DAY FROM td.deadline) = EXTRACT(DAY FROM " + date + ")" +
+                        "WHERE EXTRACT(DAY FROM td.addingDate) = EXTRACT(DAY FROM " + addingDate + ")" +
                         "AND td.employee = " + user + " " +
                         " ORDER BY td.'" + attribute + "'", Todo.class);
         } catch (NullPointerException e) {
