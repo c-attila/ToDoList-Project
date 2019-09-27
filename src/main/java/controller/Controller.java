@@ -75,9 +75,12 @@ public class Controller implements Initializable {
         Text userNameText = (Text) scene.lookup("#user_name_text");
         userNameText.setText(userName);
 
+        java.util.Date today = new java.util.Date();
+//        List<Todo> listTodo = TodoDAO.listTodo("id",userName,new java.sql.Timestamp(today.getTime()));
+
     }
 
-    public void showTodos(List<Todo> listTodo){
+    private void showTodos(List<Todo> listTodo){
 
         int i = 0;
         for(Todo todo : listTodo) {
