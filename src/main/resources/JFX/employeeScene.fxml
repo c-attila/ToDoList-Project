@@ -9,7 +9,7 @@
 
 <Pane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #99d8ea;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
-      <DatePicker layoutX="413.0" layoutY="45.0" />
+      <DatePicker fx:id="datePicker" layoutX="413.0" layoutY="45.0" onAction="#showTodosAction"/>
       <Text fx:id="user_name_text" layoutX="12.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User name" wrappingWidth="970.1171569824219">
          <font>
             <Font size="24.0" />
@@ -17,7 +17,7 @@
       </Text>
       <MenuButton layoutX="15.0" layoutY="77.0" mnemonicParsing="false" text="Rendezési szempont">
         <items>
-          <MenuItem fx:id="sort_by_id_menuItem" mnemonicParsing="false" text="Sorszám"/>
+          <MenuItem fx:id="sort_by_id_menuItem" mnemonicParsing="false" text="Sorszám" onAction="#adatbazisProbaAction"/>
             <MenuItem fx:id="sort_by_description_menuItem" mnemonicParsing="false" text="Leírás szerint" />
           <MenuItem fx:id="sort_by_color_menuItem" mnemonicParsing="false" text="Szín" />
             <MenuItem fx:id="sort_by_date_menuItem" mnemonicParsing="false" text="Határidő" />
