@@ -38,6 +38,8 @@ public class Controller implements Initializable {
     private Model model;
     private TodoDAO todoDAO;
 
+    List<CheckBox> checkBoxList;
+
     private String userName;
 
     @FXML
@@ -52,7 +54,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    private void showTodosAction() {
+    private void showTodoAction() {
         LocalDate date = datePicker.getValue();
         List<Todo> listTodo = TodoDAO.listTodo("id", userName, Timestamp.valueOf(date.atStartOfDay()));
         logger.info(listTodo);
@@ -68,9 +70,6 @@ public class Controller implements Initializable {
 
         Text userNameText = (Text) scene.lookup("#user_name_text");
         userNameText.setText(userName);
-
-        java.util.Date today = new java.util.Date();
-//        List<Todo> listTodo = TodoDAO.listTodo("id",userName,new java.sql.Timestamp(today.getTime()));
 
     }
 
@@ -118,6 +117,7 @@ public class Controller implements Initializable {
 
                 CheckBox checkBox = new CheckBox();
                 checkBox.setSelected(todo.isDone());
+                checkBoxList.add(checkBox);
                 hBox.getChildren().add(checkBox);
 
                 list_VBox.getChildren().add(hBox);
