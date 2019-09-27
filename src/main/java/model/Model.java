@@ -25,9 +25,6 @@ public class Model {
         Todo todo = new Todo(new java.sql.Timestamp(today.getTime()), 'r', "asd", new java.sql.Timestamp(today.getTime()), "Aladár", false);
         dao.saveTodo(todo);
 
-//        logger.info(todo.toString());
-//        controller.showTodos(dao.listTodo("id","Aladár",new java.sql.Timestamp(today.getTime())));
-        System.out.println(dao.listTodo("id","Aladár",new Timestamp(today.getTime())).toString());
     }
 
 }

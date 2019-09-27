@@ -1,5 +1,6 @@
 package model.DAO;
 
+import com.mysql.jdbc.log.Log;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.exception.JDBCConnectionException;
@@ -41,7 +42,9 @@ public class TodoDAO {
         }
     }
 
-    public List<Todo> listTodo(String attribute, String user, java.sql.Timestamp addingDate) {
+    public static List<Todo> listTodo(String attribute, String user, java.sql.Timestamp addingDate) {
+
+        logger.info("listTodo");
 
         TypedQuery<Todo> query;
         try {
@@ -61,6 +64,7 @@ public class TodoDAO {
             return null;
         }
 
+        logger.info(query.getResultList());
         return query.getResultList();
     }
 
