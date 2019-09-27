@@ -47,13 +47,13 @@ public class TodoDAO {
         try {
             if (user.equals("admin"))
                 query = em.createQuery("SELECT td FROM Todo td " +
-                        "WHERE EXTRACT(DAY FROM td.addingDate) = EXTRACT(DAY FROM " + addingDate + ")" +
-                        " ORDER BY td.'" + attribute + "'", Todo.class);
+                        "WHERE EXTRACT(DAY FROM td.addingDate) = EXTRACT(DAY FROM \'" + addingDate.toString().split(" ")[0] + "\')" +
+                        " ORDER BY td." + attribute, Todo.class);
             else
                 query = em.createQuery("SELECT td FROM Todo td " +
-                        "WHERE EXTRACT(DAY FROM td.addingDate) = EXTRACT(DAY FROM " + addingDate + ")" +
-                        "AND td.employee = " + user + " " +
-                        " ORDER BY td.'" + attribute + "'", Todo.class);
+                        "WHERE EXTRACT(DAY FROM td.addingDate) = EXTRACT(DAY FROM \'" + addingDate.toString().split(" ")[0] + "\')" +
+                        " AND td.employee = '" + user + "'" +
+                        " ORDER BY td." + attribute, Todo.class);
         } catch (NullPointerException e) {
             logger.warn("Connection not found. Exception: " + e);
             emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");

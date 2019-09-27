@@ -29,6 +29,9 @@ public class Todo {
     @Column(name = "isDone")
     private boolean isDone;
 
+    public Todo() {
+    }
+
     public Todo(Timestamp addingDate, char color, String description, Timestamp deadline, String employee, boolean isDone) {
         this.addingDate = addingDate;
         this.color = color;
