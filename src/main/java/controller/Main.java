@@ -40,8 +40,9 @@ public class Main extends Application {
             TextField userNameTextField = (TextField) scene.lookup("#user_name_text_field");
             TextField passwordTextField = (TextField) scene.lookup("#password_text_field");
 
-            if(!userNameTextField.getText().equals(ADMIN_NAME) && !userNameTextField.getText().isEmpty())
+            if(!userNameTextField.getText().equals(ADMIN_NAME) && !userNameTextField.getText().isEmpty()) {
                 controller.login(primaryStage, scene2, userNameTextField.getText());
+            }
 
 
         });

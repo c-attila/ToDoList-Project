@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 <Pane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #99d8ea;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
-      <DatePicker fx:id="datePicker" layoutX="413.0" layoutY="45.0" onAction="#showTodoAction"/>
+      <DatePicker fx:id="datePicker" layoutX="413.0" layoutY="45.0"/>
       <Text fx:id="user_name_text" layoutX="12.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User name" wrappingWidth="970.1171569824219">
          <font>
             <Font size="24.0" />
@@ -17,18 +14,18 @@
       </Text>
       <MenuButton layoutX="15.0" layoutY="77.0" mnemonicParsing="false" text="Rendezési szempont">
         <items>
-          <MenuItem fx:id="sort_by_id_menuItem" mnemonicParsing="false" text="Sorszám" onAction="#adatbazisProbaAction"/>
+          <MenuItem fx:id="sort_by_id_menuItem" mnemonicParsing="false" text="Sorszám"/>
             <MenuItem fx:id="sort_by_description_menuItem" mnemonicParsing="false" text="Leírás szerint" />
           <MenuItem fx:id="sort_by_color_menuItem" mnemonicParsing="false" text="Szín" />
             <MenuItem fx:id="sort_by_date_menuItem" mnemonicParsing="false" text="Határidő" />
             <MenuItem fx:id="sort_by_employee_menuItem" mnemonicParsing="false" text="Alkalmazott" />
         </items>
       </MenuButton>
-      <ScrollPane layoutY="114.0" prefHeight="485.0" prefWidth="1000.0" style="-fx-background-color: #99d8ea; -fx-border-color: #429eb8;">
+      <ScrollPane fx:id="scrollPane" layoutY="114.0" prefHeight="485.0" prefWidth="1000.0" style="-fx-background-color: #99d8ea; -fx-border-color: #429eb8;">
          <content>
-            <AnchorPane prefHeight="500.0" prefWidth="990.0" style="-fx-background-color: #99d8ea;">
+            <AnchorPane fx:id="anchorPane" prefHeight="500.0" prefWidth="990.0" style="-fx-background-color: #99d8ea;">
                <children>
-                  <VBox id="list_VBox" fx:id="list_VBox" prefWidth="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <VBox fx:id="vBox" prefWidth="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </content>

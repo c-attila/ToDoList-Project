@@ -1,16 +1,13 @@
 package controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.NodeOrientation;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Border;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -23,11 +20,10 @@ import model.Model;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -41,39 +37,44 @@ public class Controller implements Initializable {
     List<CheckBox> checkBoxList;
 
     private String userName;
+    private Scene scene;
 
     @FXML
-    private VBox list_VBox;
+    private VBox vBox;
 
     @FXML
     private DatePicker datePicker;
+
+    @FXML
+    private ScrollPane scrollPane;
 
     @FXML
     private void adatbazisProbaAction(javafx.event.ActionEvent actionEvent) {
         model.adatbazisProba();
     }
 
-    @FXML
-    private void showTodoAction() {
-        LocalDate date = datePicker.getValue();
-        List<Todo> listTodo = TodoDAO.listTodo("id", userName, Timestamp.valueOf(date.atStartOfDay()));
-        logger.info(listTodo);
-        showTodos(listTodo);
-    }
-
-
     public void login(Stage stage, Scene scene, String userName) {
 
         this.userName = userName;
+        this.scene = scene;
 
         stage.setScene(scene);
 
         Text userNameText = (Text) scene.lookup("#user_name_text");
         userNameText.setText(userName);
 
+        showTodo();
+
     }
 
-    private void showTodos(List<Todo> listTodo) {
+    private void showTodo() {
+
+        Date today = new Date();
+        List<Todo> listTodo = TodoDAO.listTodo("id", userName, new Timestamp(today.getTime()));
+        logger.info(new Timestamp(today.getTime()));
+        logger.info(listTodo);
+
+        checkBoxList = new ArrayList<>();
 
         int i = 0;
         if (listTodo != null)
@@ -120,9 +121,8 @@ public class Controller implements Initializable {
                 checkBoxList.add(checkBox);
                 hBox.getChildren().add(checkBox);
 
-                list_VBox.getChildren().add(hBox);
+                vBox.getChildren().add(hBox);
             }
-
 
     }
 
