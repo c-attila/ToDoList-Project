@@ -14,6 +14,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     private final String ADMIN_NAME = "admin";
+    private final String PASSWD = "admin";
 
     Controller controller;
 
@@ -23,8 +24,10 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("/JFX/loginScene.fxml"));
         Parent root2 = FXMLLoader.load(getClass().getResource("/JFX/employeeScene.fxml"));
+        Parent root3 = FXMLLoader.load(getClass().getResource("/JFX/adminScene.fxml"));
         Scene scene = new Scene(root);
         Scene scene2 = new Scene(root2);
+        Scene scene3 = new Scene(root3);
 
         primaryStage.setTitle("Hello World");
         primaryStage.setWidth(1000);
@@ -42,6 +45,10 @@ public class Main extends Application {
 
             if(!userNameTextField.getText().equals(ADMIN_NAME) && !userNameTextField.getText().isEmpty()) {
                 controller.login(primaryStage, scene2, userNameTextField.getText());
+            }else{
+                if(userNameTextField.getText().equals(ADMIN_NAME) && passwordTextField.getText().equals(PASSWD)){
+                    controller.login(primaryStage, scene3, userNameTextField.getText());
+                }
             }
 
 
