@@ -1,9 +1,12 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.NodeOrientation;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Border;
@@ -12,12 +15,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import model.DAO.Todo;
 import model.DAO.TodoDAO;
 import model.Model;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +67,15 @@ public class Controller implements Initializable {
         showTodos(listTodo);
     }
 
+
+    public void login(Stage stage, Scene scene, String userName){
+
+        stage.setScene(scene);
+
+        Text userNameText = (Text) scene.lookup("#user_name_text");
+        userNameText.setText(userName);
+
+    }
 
     public void showTodos(List<Todo> listTodo){
 
