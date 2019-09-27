@@ -6,6 +6,8 @@ import model.DAO.TodoDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.sql.Timestamp;
+
 public class Model {
 
     private static Logger logger = LogManager.getLogger();
@@ -24,8 +26,8 @@ public class Model {
         dao.saveTodo(todo);
 
 //        logger.info(todo.toString());
-        controller.showTodos(dao.listTodo("id","Aladár",new java.sql.Timestamp(today.getTime())));
-
+//        controller.showTodos(dao.listTodo("id","Aladár",new java.sql.Timestamp(today.getTime())));
+        System.out.println(dao.listTodo("id","Aladár",new Timestamp(today.getTime())).toString());
     }
 
 }
