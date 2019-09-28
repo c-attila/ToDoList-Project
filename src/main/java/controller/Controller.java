@@ -42,6 +42,8 @@ public class Controller implements Initializable {
 
     private Text userNameText;
 
+    Button addButton;
+
     @FXML
     private Pane pane;
 
@@ -78,7 +80,6 @@ public class Controller implements Initializable {
             buildAdminFunctions();
 
         Date today = new Date();
-        logger.info(new Timestamp(today.getTime()));
         buildScrollPane(new Timestamp(today.getTime()));
 
     }
@@ -89,6 +90,7 @@ public class Controller implements Initializable {
 
         HBox hBox = new HBox();
         hBox.setLayoutY(500);
+        hBox.setLayoutX(20);
         hBox.setSpacing(20);
 
         ColorPicker colorPicker = new ColorPicker();
@@ -97,13 +99,23 @@ public class Controller implements Initializable {
 
         TextArea addDescriptionTextArea = new TextArea();
         addDescriptionTextArea.setPrefHeight(60);
-        addDescriptionTextArea.setPrefWidth(551);
+        addDescriptionTextArea.setPrefWidth(430);
         hBox.getChildren().add(addDescriptionTextArea);
+
+        DatePicker datePicker = new DatePicker();
+        datePicker.setPrefHeight(60);
+        datePicker.setValue(LocalDate.now());
+        hBox.getChildren().add(datePicker);
 
         TextArea addEmployeeTextArea = new TextArea();
         addEmployeeTextArea.setPrefWidth(60);
         addEmployeeTextArea.setPrefHeight(100);
         hBox.getChildren().add(addEmployeeTextArea);
+
+        addButton = new Button();
+        addButton.setPrefHeight(60);
+        addButton.setText("Hozzáadás");
+        hBox.getChildren().add(addButton);
 
         pane.getChildren().add(hBox);
 
