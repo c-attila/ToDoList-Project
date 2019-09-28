@@ -18,6 +18,11 @@
             <Font size="19.0" />
          </font>
       </Text>
+      <Text layoutX="550.0" layoutY="375.0" id="empty_passwd_field_text" fx:id="empty_passwd_field_text" text="Adja meg jelszót!" visible="false">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
       <VBox layoutX="318.0" layoutY="245.0" spacing="10.0">
          <children>
             <HBox layoutX="453.0" layoutY="233.943359375" spacing="5.0">
@@ -32,12 +37,12 @@
             </HBox>
             <HBox alignment="TOP_RIGHT" layoutX="560.0" layoutY="284.943359375" spacing="5.0">
                <children>
-                  <Text layoutX="560.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó:">
+                  <Text layoutX="560.0" layoutY="313.0" fx:id="passwd_text" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó:" visible="false" >
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Text>
-                  <TextField id="password_text_field" fx:id="password_text_field" layoutX="648.0" layoutY="292.0" prefHeight="35.0" prefWidth="179.0" />
+                  <TextField id="password_text_field" fx:id="password_text_field" layoutX="648.0" layoutY="292.0" prefHeight="35.0" prefWidth="179.0" visible="false" />
                </children>
             </HBox>
          </children>

@@ -52,15 +52,23 @@ public class Main extends Application {
 
             TextField userNameTextField = (TextField) scene.lookup("#user_name_text_field");
             TextField passwordTextField = (TextField) scene.lookup("#password_text_field");
+            Text passwd_text = (Text) scene.lookup("#passwd_text");
 
             if(!userNameTextField.getText().equals(ADMIN_NAME) && !userNameTextField.getText().isEmpty()) {
                 controller.login(primaryStage, scene2, userNameTextField.getText());
             }else{
                 if(userNameTextField.getText().equals(ADMIN_NAME)){
+                    passwordTextField.setVisible(true);
+                    passwd_text.setVisible(true);
                     if(passwordTextField.getText().equals(PASSWD)){
                         controller.login(primaryStage, scene3, userNameTextField.getText());
+                    }else if(passwordTextField.getText().isEmpty()){
+                        Text empty_passwd_field_text = (Text) scene.lookup("#empty_passwd_field_text");
+                        empty_passwd_field_text.setVisible(true);
                     }else{
                         Text wrong_passwd_text = (Text) scene.lookup("#wrong_passwd_text");
+                        Text empty_passwd_field_text = (Text) scene.lookup("#empty_passwd_field_text");
+                        empty_passwd_field_text.setVisible(false);
                         wrong_passwd_text.setVisible(true);
                     }
                 }
