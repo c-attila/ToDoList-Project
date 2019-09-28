@@ -44,7 +44,7 @@ public class TodoDAO {
 
     public static List<Todo> listTodo(String attribute, String user, java.sql.Timestamp addingDate) {
 
-        logger.info("listTodo");
+        logger.info("listTodo: " + attribute + " " + user + " " + addingDate);
 
         TypedQuery<Todo> query;
         try {

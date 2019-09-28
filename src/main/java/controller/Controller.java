@@ -39,15 +39,25 @@ public class Controller implements Initializable {
 
     List<CheckBox> checkBoxList;
 
-    private String userName;
+    private static String userName;
     private Scene scene;
+
+    private Text userNameText;
 
     @FXML
     private Pane pane;
 
     @FXML
+    private DatePicker datePicker;
+
+    @FXML
     private void adatbazisProbaAction(javafx.event.ActionEvent actionEvent) {
         model.adatbazisProba();
+    }
+
+    @FXML
+    private void changeDate(){
+        buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()));
     }
 
     public void login(Stage stage, Scene scene, String userName) {
@@ -57,19 +67,21 @@ public class Controller implements Initializable {
 
         stage.setScene(scene);
 
-        Text userNameText = (Text) scene.lookup("#user_name_text");
+        userNameText = (Text) scene.lookup("#user_name_text");
         userNameText.setText(userName);
 
-        DatePicker datePicker = (DatePicker) scene.lookup("#datePicker");
+        datePicker = (DatePicker) scene.lookup("#datePicker");
         datePicker.setValue(LocalDate.now());
 
-        buildScrollPane();
+        pane = (Pane) scene.lookup("#pane");
+
+        Date today = new Date();
+        logger.info(new Timestamp(today.getTime()));
+        buildScrollPane(new Timestamp(today.getTime()));
 
     }
 
-    private void buildScrollPane(){
-
-        pane = (Pane) scene.lookup("#pane");
+    private void buildScrollPane(Timestamp timestamp){
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setLayoutY(114);
@@ -85,10 +97,10 @@ public class Controller implements Initializable {
 
         VBox vBox = new VBox();
         vBox.setPrefWidth(100);
-        Date today = new Date();
-        showTodo(vBox,new Timestamp(today.getTime()));
+        showTodo(vBox,timestamp);
         anchorPane.getChildren().add(vBox);
 
+        pane.getChildren().removeAll();
         pane.getChildren().add(scrollPane);
 
     }
@@ -96,6 +108,7 @@ public class Controller implements Initializable {
     public VBox showTodo(VBox vBox, Timestamp timestamp) {
 
         logger.info("showTodo...");
+        logger.info("userName: " + userName);
 
 
         List<Todo> listTodo = TodoDAO.listTodo("id", userName, timestamp);
