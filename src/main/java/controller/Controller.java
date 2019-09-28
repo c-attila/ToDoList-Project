@@ -47,6 +47,8 @@ public class Controller implements Initializable {
 
     @FXML
     private Pane pane;
+    @FXML
+    private Pane pane_lgnscn;
 
     @FXML
     private DatePicker datePicker;
@@ -88,6 +90,16 @@ public class Controller implements Initializable {
 
         Date today = new Date();
         buildScrollPane(new Timestamp(today.getTime()));
+
+    }
+
+    public void back(@org.jetbrains.annotations.NotNull Stage stage, Scene scene) {
+
+        this.scene = scene;
+
+        stage.setScene(scene);
+
+        pane_lgnscn = (Pane) scene.lookup("#pane_lgnscn");
 
     }
 

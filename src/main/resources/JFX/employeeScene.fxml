@@ -4,6 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+
 <Pane fx:id="pane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #99d8ea;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
       <DatePicker fx:id="datePicker" layoutX="413.0" layoutY="45.0" onAction="#changeDate"/>
@@ -30,5 +31,6 @@
 <!--            </AnchorPane>-->
 <!--         </content>-->
 <!--      </ScrollPane>-->
+       <Button id="back_button_e" fx:id="back_button_e" layoutX="865.0" layoutY="25.0" prefHeight="38.0" prefWidth="119.0" text="Vissza"  />
    </children>
 </Pane>

@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.DAO.TodoDAO;
@@ -22,6 +23,9 @@ public class Main extends Application {
     public static final String PASSWD = "admin";
 
     private static Logger logger = LogManager.getLogger();
+
+    @FXML
+    private Pane pane;
 
     Controller controller;
 
@@ -75,6 +79,34 @@ public class Main extends Application {
             }
 
 
+        });
+
+        Button backButton_e = (Button) scene2.lookup("#back_button_e");
+        backButton_e.setOnAction(actionEvent -> {
+            controller.back(primaryStage, scene);
+            TextField passwordTextField = (TextField) scene.lookup("#password_text_field");
+            TextField userNameTextField = (TextField) scene.lookup("#user_name_text_field");
+            Text empty_passwd_field_text = (Text) scene.lookup("#empty_passwd_field_text");
+            Text passwd_text = (Text) scene.lookup("#passwd_text");
+            passwordTextField.setVisible(false);
+            passwordTextField.setText("");
+            passwd_text.setVisible(false);
+            empty_passwd_field_text.setVisible(false);
+            userNameTextField.setText("");
+        });
+
+        Button backButton_a = (Button) scene3.lookup("#back_button_a");
+        backButton_a.setOnAction(actionEvent -> {
+            controller.back(primaryStage, scene);
+            TextField passwordTextField = (TextField) scene.lookup("#password_text_field");
+            TextField userNameTextField = (TextField) scene.lookup("#user_name_text_field");
+            Text empty_passwd_field_text = (Text) scene.lookup("#empty_passwd_field_text");
+            Text passwd_text = (Text) scene.lookup("#passwd_text");
+            passwordTextField.setVisible(false);
+            passwordTextField.setText("");
+            passwd_text.setVisible(false);
+            empty_passwd_field_text.setVisible(false);
+            userNameTextField.setText("");
         });
 
     }

@@ -24,5 +24,6 @@
             <MenuItem fx:id="sort_by_employee_menuItem" mnemonicParsing="false" text="Alkalmazott" />
         </items>
       </MenuButton>
+       <Button id="back_button_a" fx:id="back_button_a" layoutX="865.0" layoutY="25.0" prefHeight="38.0" prefWidth="119.0" text="Vissza"  />
    </children>
 </Pane>
