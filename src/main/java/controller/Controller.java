@@ -4,9 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -57,6 +55,7 @@ public class Controller implements Initializable {
 
     @FXML
     private void changeDate(){
+        syncCheckBoxes();
         buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()));
     }
 
@@ -75,9 +74,38 @@ public class Controller implements Initializable {
 
         pane = (Pane) scene.lookup("#pane");
 
+        if(userName.equals(Main.ADMIN_NAME))
+            buildAdminFunctions();
+
         Date today = new Date();
         logger.info(new Timestamp(today.getTime()));
         buildScrollPane(new Timestamp(today.getTime()));
+
+    }
+
+    private void buildAdminFunctions(){
+
+        logger.info("buildAdminFunctions...");
+
+        HBox hBox = new HBox();
+        hBox.setLayoutY(500);
+        hBox.setSpacing(20);
+
+        ColorPicker colorPicker = new ColorPicker();
+        colorPicker.setPrefHeight(60);
+        hBox.getChildren().add(colorPicker);
+
+        TextArea addDescriptionTextArea = new TextArea();
+        addDescriptionTextArea.setPrefHeight(60);
+        addDescriptionTextArea.setPrefWidth(551);
+        hBox.getChildren().add(addDescriptionTextArea);
+
+        TextArea addEmployeeTextArea = new TextArea();
+        addEmployeeTextArea.setPrefWidth(60);
+        addEmployeeTextArea.setPrefHeight(100);
+        hBox.getChildren().add(addEmployeeTextArea);
+
+        pane.getChildren().add(hBox);
 
     }
 
@@ -86,6 +114,8 @@ public class Controller implements Initializable {
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setLayoutY(114);
         scrollPane.setPrefHeight(485);
+        if(userName.equals(Main.ADMIN_NAME))
+            scrollPane.setPrefHeight(385);
         scrollPane.setPrefWidth(1000);
         scrollPane.setStyle("-fx-background-color: #99d8ea; -fx-border-color: #429eb8;");
 
@@ -105,7 +135,7 @@ public class Controller implements Initializable {
 
     }
 
-    public VBox showTodo(VBox vBox, Timestamp timestamp) {
+    private VBox showTodo(VBox vBox, Timestamp timestamp) {
 
         logger.info("showTodo...");
         logger.info("userName: " + userName);
@@ -165,6 +195,10 @@ public class Controller implements Initializable {
             }
 
         return vBox;
+
+    }
+
+    public void syncCheckBoxes(){
 
     }
 

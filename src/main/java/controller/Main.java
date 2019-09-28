@@ -13,8 +13,8 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    private final String ADMIN_NAME = "admin";
-    private final String PASSWD = "admin";
+    public static final String ADMIN_NAME = "admin";
+    public static final String PASSWD = "admin";
 
     Controller controller;
 
@@ -29,13 +29,16 @@ public class Main extends Application {
         Scene scene2 = new Scene(root2);
         Scene scene3 = new Scene(root3);
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("ToDoList");
         primaryStage.setWidth(1000);
         primaryStage.setHeight(600);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
-        primaryStage.setOnCloseRequest(e -> TodoDAO.close());
+        primaryStage.setOnCloseRequest(e -> {
+            TodoDAO.close();
+            controller.syncCheckBoxes();
+        });
 
         Button loginButton = (Button) scene.lookup("#login_button");
         loginButton.setOnAction(actionEvent -> {
