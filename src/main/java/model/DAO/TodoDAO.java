@@ -28,7 +28,7 @@ public class TodoDAO {
         }
     }
 
-    public void saveTodo(Todo todo) {
+    public static void saveTodo(Todo todo) {
         try {
             em.getTransaction().begin();
             em.persist(todo);

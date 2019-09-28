@@ -23,6 +23,7 @@ import java.net.URL;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -49,6 +50,12 @@ public class Controller implements Initializable {
 
     @FXML
     private DatePicker datePicker;
+
+    private ColorPicker colorPicker;
+
+    private TextArea addDescriptionTextArea, addEmployeeTextArea;
+
+    private DatePicker deadlineDatePicker;
 
     @FXML
     private void adatbazisProbaAction(javafx.event.ActionEvent actionEvent) {
@@ -93,21 +100,21 @@ public class Controller implements Initializable {
         hBox.setLayoutX(20);
         hBox.setSpacing(20);
 
-        ColorPicker colorPicker = new ColorPicker();
+        colorPicker = new ColorPicker();
         colorPicker.setPrefHeight(60);
         hBox.getChildren().add(colorPicker);
 
-        TextArea addDescriptionTextArea = new TextArea();
+        addDescriptionTextArea = new TextArea();
         addDescriptionTextArea.setPrefHeight(60);
         addDescriptionTextArea.setPrefWidth(430);
         hBox.getChildren().add(addDescriptionTextArea);
 
-        DatePicker datePicker = new DatePicker();
-        datePicker.setPrefHeight(60);
-        datePicker.setValue(LocalDate.now());
-        hBox.getChildren().add(datePicker);
+        deadlineDatePicker = new DatePicker();
+        deadlineDatePicker.setPrefHeight(60);
+        deadlineDatePicker.setValue(LocalDate.now().plus(1, ChronoUnit.DAYS));
+        hBox.getChildren().add(deadlineDatePicker);
 
-        TextArea addEmployeeTextArea = new TextArea();
+        addEmployeeTextArea = new TextArea();
         addEmployeeTextArea.setPrefWidth(60);
         addEmployeeTextArea.setPrefHeight(100);
         hBox.getChildren().add(addEmployeeTextArea);
@@ -115,6 +122,7 @@ public class Controller implements Initializable {
         addButton = new Button();
         addButton.setPrefHeight(60);
         addButton.setText("Hozzáadás");
+        addButton.setOnAction(actionEvent -> addButtonAction());
         hBox.getChildren().add(addButton);
 
         pane.getChildren().add(hBox);
@@ -207,6 +215,17 @@ public class Controller implements Initializable {
             }
 
         return vBox;
+
+    }
+
+    @FXML
+    private void addButtonAction(){
+
+        Date today = new Date();
+        Todo todo = new Todo(new Timestamp(today.getTime()), colorPicker.getValue().toString().charAt(0),addDescriptionTextArea.getText(),
+                Timestamp.valueOf(deadlineDatePicker.getValue().atStartOfDay()),addEmployeeTextArea.getText(),false);
+        TodoDAO.saveTodo(todo);
+        buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()));
 
     }
 
