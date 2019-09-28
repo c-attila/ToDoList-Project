@@ -87,12 +87,14 @@ public class Main extends Application {
             TextField passwordTextField = (TextField) scene.lookup("#password_text_field");
             TextField userNameTextField = (TextField) scene.lookup("#user_name_text_field");
             Text empty_passwd_field_text = (Text) scene.lookup("#empty_passwd_field_text");
+            Text wrong_passwd_text = (Text) scene.lookup("#wrong_passwd_text");
             Text passwd_text = (Text) scene.lookup("#passwd_text");
             passwordTextField.setVisible(false);
             passwordTextField.setText("");
             passwd_text.setVisible(false);
             empty_passwd_field_text.setVisible(false);
             userNameTextField.setText("");
+            wrong_passwd_text.setVisible(false);
         });
 
         Button backButton_a = (Button) scene3.lookup("#back_button_a");
@@ -101,12 +103,14 @@ public class Main extends Application {
             TextField passwordTextField = (TextField) scene.lookup("#password_text_field");
             TextField userNameTextField = (TextField) scene.lookup("#user_name_text_field");
             Text empty_passwd_field_text = (Text) scene.lookup("#empty_passwd_field_text");
+            Text wrong_passwd_text = (Text) scene.lookup("#wrong_passwd_text");
             Text passwd_text = (Text) scene.lookup("#passwd_text");
             passwordTextField.setVisible(false);
             passwordTextField.setText("");
             passwd_text.setVisible(false);
             empty_passwd_field_text.setVisible(false);
             userNameTextField.setText("");
+            wrong_passwd_text.setVisible(false);
         });
 
     }
