@@ -37,7 +37,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button id="login_button" fx:id="login_button" layoutX="433.0" layoutY="415.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="119.0" text="Bejelentkezés" />
+      <Button id="login_button" fx:id="login_button" layoutX="433.0" layoutY="415.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="119.0" text="Bejelentkezés"  />
       <Button layoutX="231.0" layoutY="434.0" mnemonicParsing="false" onAction="#adatbazisProbaAction" text="Adatbázis próba" />
    </children>
 </Pane>

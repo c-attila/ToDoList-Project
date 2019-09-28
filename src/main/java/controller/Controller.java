@@ -9,6 +9,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -21,6 +22,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.net.URL;
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -43,7 +45,7 @@ public class Controller implements Initializable {
     private VBox vBox;
 
     @FXML
-    private DatePicker datePicker;
+    private Pane pane;
 
     @FXML
     private ScrollPane scrollPane;
@@ -63,15 +65,44 @@ public class Controller implements Initializable {
         Text userNameText = (Text) scene.lookup("#user_name_text");
         userNameText.setText(userName);
 
-        showTodo();
+        buildScrollPane();
+
+//        showTodo();
 
     }
 
-    private void showTodo() {
+    private void buildScrollPane(){
 
+        pane = (Pane) scene.lookup("#pane");
+
+        ScrollPane scrollPane = new ScrollPane();
+        scrollPane.setLayoutY(114);
+        scrollPane.setPrefHeight(485);
+        scrollPane.setPrefWidth(1000);
+        scrollPane.setStyle("-fx-background-color: #99d8ea; -fx-border-color: #429eb8;");
+
+        AnchorPane anchorPane = new AnchorPane();
+        anchorPane.setPrefWidth(990);
+        anchorPane.setPrefHeight(500);
+        anchorPane.setStyle("-fx-background-color: #99d8ea;");
+        scrollPane.setContent(anchorPane);
+
+        VBox vBox = new VBox();
+        vBox.setPrefWidth(100);
         Date today = new Date();
-        List<Todo> listTodo = TodoDAO.listTodo("id", userName, new Timestamp(today.getTime()));
-        logger.info(new Timestamp(today.getTime()));
+        showTodo(vBox,new Timestamp(today.getTime()));
+        anchorPane.getChildren().add(vBox);
+
+        pane.getChildren().add(scrollPane);
+
+    }
+
+    public VBox showTodo(VBox vBox, Timestamp timestamp) {
+
+        logger.info("showTodo...");
+
+
+        List<Todo> listTodo = TodoDAO.listTodo("id", userName, timestamp);
         logger.info(listTodo);
 
         checkBoxList = new ArrayList<>();
@@ -123,6 +154,8 @@ public class Controller implements Initializable {
 
                 vBox.getChildren().add(hBox);
             }
+
+        return vBox;
 
     }
 
