@@ -13,6 +13,11 @@
             <Font size="38.0" />
          </font>
       </Text>
+      <Text layoutX="550.0" layoutY="375.0" id="wrong_passwd_text" fx:id="wrong_passwd_text" text="Hibás jelszó!" visible="false">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
       <VBox layoutX="318.0" layoutY="245.0" spacing="10.0">
          <children>
             <HBox layoutX="453.0" layoutY="233.943359375" spacing="5.0">
