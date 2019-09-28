@@ -24,6 +24,7 @@ import org.apache.logging.log4j.Logger;
 import java.net.URL;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -42,13 +43,7 @@ public class Controller implements Initializable {
     private Scene scene;
 
     @FXML
-    private VBox vBox;
-
-    @FXML
     private Pane pane;
-
-    @FXML
-    private ScrollPane scrollPane;
 
     @FXML
     private void adatbazisProbaAction(javafx.event.ActionEvent actionEvent) {
@@ -65,9 +60,10 @@ public class Controller implements Initializable {
         Text userNameText = (Text) scene.lookup("#user_name_text");
         userNameText.setText(userName);
 
-        buildScrollPane();
+        DatePicker datePicker = (DatePicker) scene.lookup("#datePicker");
+        datePicker.setValue(LocalDate.now());
 
-//        showTodo();
+        buildScrollPane();
 
     }
 
