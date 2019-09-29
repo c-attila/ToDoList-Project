@@ -17,11 +17,11 @@
       </Text>
       <MenuButton layoutX="15.0" layoutY="77.0" mnemonicParsing="false" text="Rendezési szempont">
         <items>
-          <MenuItem fx:id="sort_by_id_menuItem" mnemonicParsing="false" text="Sorszám" />
-            <MenuItem fx:id="sort_by_description_menuItem" mnemonicParsing="false" text="Leírás szerint" />
-          <MenuItem fx:id="sort_by_color_menuItem" mnemonicParsing="false" text="Szín" />
-            <MenuItem fx:id="sort_by_date_menuItem" mnemonicParsing="false" text="Határidő" />
-            <MenuItem fx:id="sort_by_employee_menuItem" mnemonicParsing="false" text="Alkalmazott" />
+          <MenuItem fx:id="sort_by_id_menuItem" onAction="#sortTodos" userData="1" mnemonicParsing="false" text="Sorszám" />
+            <MenuItem fx:id="sort_by_description_menuItem" onAction="#sortTodos" userData="2" mnemonicParsing="false" text="Leírás szerint" />
+          <MenuItem fx:id="sort_by_color_menuItem" onAction="#sortTodos" userData="3" mnemonicParsing="false" text="Szín" />
+            <MenuItem fx:id="sort_by_date_menuItem" onAction="#sortTodos" userData="4" mnemonicParsing="false" text="Határidő" />
+            <MenuItem fx:id="sort_by_employee_menuItem" onAction="#sortTodos" userData="5" mnemonicParsing="false" text="Alkalmazott" />
         </items>
       </MenuButton>
        <Button id="back_button_a" fx:id="back_button_a" layoutX="865.0" layoutY="25.0" prefHeight="38.0" prefWidth="119.0" text="Vissza"  />

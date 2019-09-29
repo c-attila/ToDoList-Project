@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -142,6 +143,10 @@ public class Controller implements Initializable {
     }
 
     private void buildScrollPane(Timestamp timestamp){
+        buildScrollPane(timestamp, "id");
+    }
+
+    private void buildScrollPane(Timestamp timestamp, String attribute){
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setLayoutY(114);
@@ -159,7 +164,7 @@ public class Controller implements Initializable {
 
         VBox vBox = new VBox();
         vBox.setPrefWidth(100);
-        showTodo(vBox,timestamp);
+        showTodo(attribute, vBox,timestamp);
         anchorPane.getChildren().add(vBox);
 
         pane.getChildren().removeAll();
@@ -167,13 +172,13 @@ public class Controller implements Initializable {
 
     }
 
-    private VBox showTodo(VBox vBox, Timestamp timestamp) {
+    private VBox showTodo(String attribute, VBox vBox, Timestamp timestamp) {
 
         logger.info("showTodo...");
         logger.info("userName: " + userName);
 
 
-        List<Todo> listTodo = TodoDAO.listTodo("id", userName, timestamp);
+        List<Todo> listTodo = TodoDAO.listTodo(attribute, userName, timestamp);
         logger.info(listTodo);
 
         checkBoxList = new ArrayList<>();
@@ -239,6 +244,27 @@ public class Controller implements Initializable {
         TodoDAO.saveTodo(todo);
         buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()));
 
+    }
+
+    @FXML
+    private void sortTodos(ActionEvent event) {
+        int value = Integer.parseInt((String) ((MenuItem) event.getSource()).getUserData());
+        switch (value){
+            case 2:
+                buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()),"description");
+                break;
+            case 3:
+                buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()),"color");
+                break;
+            case 4:
+                buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()),"deadline");
+                break;
+            case 5:
+                buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()),"employee");
+                break;
+            default:
+                buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()),"id");
+        }
     }
 
     public void syncCheckBoxes(){
