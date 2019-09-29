@@ -239,7 +239,7 @@ public class Controller implements Initializable {
     private void addButtonAction(){
 
         Date today = new Date();
-        Todo todo = new Todo(new Timestamp(today.getTime()), colorPicker.getValue().toString().charAt(0),addDescriptionTextArea.getText(),
+        Todo todo = new Todo(new Timestamp(today.getTime()), colorPicker.getValue().toString(), addDescriptionTextArea.getText(),
                 Timestamp.valueOf(deadlineDatePicker.getValue().atStartOfDay()),addEmployeeTextArea.getText(),false);
         TodoDAO.saveTodo(todo);
         buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()));

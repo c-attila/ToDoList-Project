@@ -15,7 +15,7 @@ public class Todo {
     private java.sql.Timestamp addingDate;
 
     @Column(name = "color")
-    private char color;
+    private String color;
 
     @Column(name = "description")
     private String description;
@@ -32,7 +32,7 @@ public class Todo {
     public Todo() {
     }
 
-    public Todo(Timestamp addingDate, char color, String description, Timestamp deadline, String employee, boolean isDone) {
+    public Todo(Timestamp addingDate, String color, String description, Timestamp deadline, String employee, boolean isDone) {
         this.addingDate = addingDate;
         this.color = color;
         this.description = description;
@@ -53,11 +53,11 @@ public class Todo {
 
     public void setAddingDate(Timestamp addingDate) { this.addingDate = addingDate; }
 
-    public char getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(char color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
