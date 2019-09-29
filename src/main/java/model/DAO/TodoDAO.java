@@ -30,6 +30,7 @@ public class TodoDAO {
     }
 
     public static void saveTodo(Todo todo) {
+        logger.info("saveTodo...");
         try {
             em.getTransaction().begin();
             em.persist(todo);

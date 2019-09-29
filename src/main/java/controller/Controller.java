@@ -61,11 +61,6 @@ public class Controller implements Initializable {
     private DatePicker deadlineDatePicker;
 
     @FXML
-    private void adatbazisProbaAction(javafx.event.ActionEvent actionEvent) {
-        model.adatbazisProba();
-    }
-
-    @FXML
     private void changeDate(){
         syncCheckBoxes();
         buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()));
@@ -201,8 +196,13 @@ public class Controller implements Initializable {
                 Rectangle rectangle = new Rectangle();
                 rectangle.setHeight(25);
                 rectangle.setWidth(25);
-                rectangle.setFill(Color.WHITE);
-                rectangle.setStroke(Color.rgb(153, 216, 234));
+                try {
+                    rectangle.setFill(Color.web(todo.getColor()));
+                }
+                catch (IllegalArgumentException e){
+                    rectangle.setFill(Color.WHITE);
+                }
+                rectangle.setStroke(Color.web("#429eb8"));
                 hBox.getChildren().add(rectangle);
 
                 Text text = new Text();
@@ -239,11 +239,14 @@ public class Controller implements Initializable {
     private void addButtonAction(){
 
         Date today = new Date();
-        Todo todo = new Todo(new Timestamp(today.getTime()), colorPicker.getValue().toString(), addDescriptionTextArea.getText(),
+        Todo todo = new Todo(new Timestamp(today.getTime()), colorPicker.getValue().toString().substring(2,10), addDescriptionTextArea.getText(),
                 Timestamp.valueOf(deadlineDatePicker.getValue().atStartOfDay()),addEmployeeTextArea.getText(),false);
         TodoDAO.saveTodo(todo);
         buildScrollPane(Timestamp.valueOf(datePicker.getValue().atStartOfDay()));
-
+        colorPicker.setValue(Color.WHITE);
+        addDescriptionTextArea.setText("");
+        deadlineDatePicker.setValue(LocalDate.now().plus(1, ChronoUnit.DAYS));
+        addEmployeeTextArea.setText("");
     }
 
     @FXML
@@ -286,4 +289,5 @@ public class Controller implements Initializable {
         todoDAO = new TodoDAO();
 
     }
+
 }

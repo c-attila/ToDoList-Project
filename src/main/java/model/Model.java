@@ -22,11 +22,10 @@ public class Model {
     public void adatbazisProba() {
 
         java.util.Date today = new java.util.Date();
-        Todo todo = new Todo(new java.sql.Timestamp(today.getTime()), "r", "asd", new java.sql.Timestamp(today.getTime()), "Alad√°r", false);
+        Todo todo = new Todo(new java.sql.Timestamp(today.getTime()), "r", "asd", new java.sql.Timestamp(today.getTime()), "Alad·r", false);
         dao.saveTodo(todo);
 
         System.out.println(TodoDAO.listTodo("addingDate", "admin", new java.sql.Timestamp(today.getTime())));
         TodoDAO.updateTodo("color", "'red'", "id", 3);
     }
-
 }
