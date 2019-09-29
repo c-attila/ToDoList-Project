@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://remotemysql.com:3306/HV9K439KW7</property>
+        <property name="hibernate.connection.username">HV9K439KW7</property>
+        <property name="hibernate.connection.password">eXU4ddgiAh</property>
+        <property name="hibernate.connection.pool_size">1</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <mapping class="model.DAO.Todo" />
+    </session-factory>
+</hibernate-configuration>

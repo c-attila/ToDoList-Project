@@ -3,13 +3,14 @@ package model.DAO;
 import com.mysql.jdbc.log.Log;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.exception.JDBCConnectionException;
+import org.hibernate.hql.internal.ast.util.SessionFactoryHelper;
 import org.hibernate.service.spi.ServiceException;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.List;
 
 public class TodoDAO {
@@ -66,6 +67,25 @@ public class TodoDAO {
 
         logger.info(query.getResultList());
         return query.getResultList();
+    }
+
+    @Transactional
+    public static <T> void updateTodo(String attributeToChange, T valueToChange, String byAttribute, T byValue) {
+        try {
+            Session session = HibernateUtility.getHibernateSession();
+            session.getTransaction().begin();
+
+            Query query = session.createQuery("UPDATE Todo td " +
+                    "SET td." + attributeToChange + " = " + valueToChange + " " +
+                    "WHERE td." + byAttribute + " = " + byValue);
+
+            query.executeUpdate();
+            session.getTransaction().commit();
+        } catch (NullPointerException e) {
+            logger.warn("Connection not found. Exception: " + e);
+            emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
+            em = emf.createEntityManager();
+        }
     }
 
     public static void close() {

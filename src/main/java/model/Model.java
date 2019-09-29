@@ -26,6 +26,7 @@ public class Model {
         dao.saveTodo(todo);
 
         System.out.println(TodoDAO.listTodo("addingDate", "admin", new java.sql.Timestamp(today.getTime())));
+        TodoDAO.updateTodo("color", "'red'", "id", 3);
     }
 
 }
