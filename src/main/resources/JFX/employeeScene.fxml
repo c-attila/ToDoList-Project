@@ -15,11 +15,11 @@
       </Text>
       <MenuButton layoutX="15.0" layoutY="77.0" mnemonicParsing="false" text="Rendezési szempont">
         <items>
-          <MenuItem fx:id="sort_by_id_menuItem" mnemonicParsing="false" text="Sorszám"/>
-            <MenuItem fx:id="sort_by_description_menuItem" mnemonicParsing="false" text="Leírás szerint" />
-          <MenuItem fx:id="sort_by_color_menuItem" mnemonicParsing="false" text="Szín" />
-            <MenuItem fx:id="sort_by_date_menuItem" mnemonicParsing="false" text="Határidő" />
-            <MenuItem fx:id="sort_by_employee_menuItem" mnemonicParsing="false" text="Alkalmazott" />
+          <MenuItem fx:id="sort_by_id_menuItem" onAction="#sortTodos" userData="1" mnemonicParsing="false" text="Sorszám"/>
+            <MenuItem fx:id="sort_by_description_menuItem" onAction="#sortTodos" userData="2" mnemonicParsing="false" text="Leírás szerint" />
+          <MenuItem fx:id="sort_by_color_menuItem" onAction="#sortTodos" userData="3" mnemonicParsing="false" text="Szín" />
+            <MenuItem fx:id="sort_by_date_menuItem" onAction="#sortTodos" userData="4" mnemonicParsing="false" text="Határidő" />
+            <MenuItem fx:id="sort_by_employee_menuItem" onAction="#sortTodos" userData="5" mnemonicParsing="false" text="Alkalmazott" />
         </items>
       </MenuButton>
 <!--      <ScrollPane fx:id="scrollPane" layoutY="114.0" prefHeight="485.0" prefWidth="1000.0" style="-fx-background-color: #99d8ea; -fx-border-color: #429eb8;">-->
