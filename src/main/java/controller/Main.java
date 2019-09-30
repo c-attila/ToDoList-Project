@@ -48,7 +48,6 @@ public class Main extends Application {
         primaryStage.show();
         primaryStage.setOnCloseRequest(e -> {
             TodoDAO.close();
-            controller.syncCheckBoxes();
         });
 
         Button loginButton = (Button) scene.lookup("#login_button");
