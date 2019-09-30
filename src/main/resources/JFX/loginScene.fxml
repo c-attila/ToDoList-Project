@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.control.PasswordField?>
 <Pane fx:id="pane_lgnscn" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #99d8ea;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
       <Text layoutX="231.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XYZ kft. Tevékenységi naplója" wrappingWidth="523.13671875">
@@ -43,7 +44,7 @@
                         <Font size="26.0" />
                      </font>
                   </Text>
-                  <TextField id="password_text_field" fx:id="password_text_field" layoutX="648.0" layoutY="292.0" prefHeight="35.0" prefWidth="179.0" visible="false" />
+                  <PasswordField id="password_text_field" fx:id="password_text_field" layoutX="648.0" layoutY="292.0" prefHeight="35.0" prefWidth="179.0" visible="false" />
                </children>
             </HBox>
          </children>
