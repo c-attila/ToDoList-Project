@@ -274,7 +274,7 @@ public class Controller implements Initializable {
     public void syncCheckBoxes(Todo todo) {
 
         logger.info("syncCheckBoxes...");
-        TodoDAO.updateTodo("isDone",todo.isDone(),"id",todo.getId());
+        TodoDAO.updateTodo("isDone",!todo.isDone(),"id",todo.getId());
 
     }
 
