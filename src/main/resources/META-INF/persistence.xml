@@ -9,7 +9,7 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
             <property name="javax.persistence.jdbc.user" value="HV9K439KW7" />
             <property name="javax.persistence.jdbc.password" value="eXU4ddgiAh" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-            <property name="hibernate.hbm2ddl.auto" value="update"/>admi
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
 </persistence>
